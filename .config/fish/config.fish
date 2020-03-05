@@ -12,3 +12,10 @@ alias ll='ls -la'
 
 # aws-cli
 alias aws='docker run --rm -it -v "$HOME/.aws:/root/.aws" mesosphere/aws-cli'
+
+# direnv
+direnv hook fish | source
+
+set -x AWS_SDK_LOAD_CONFIG 1
+set -x GOPATH $HOME/go
+set -x PATH $PATH:$GOPATH/bin
