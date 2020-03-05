@@ -9,9 +9,6 @@ alias pull='git pull && git delete-merged-branches'
 # linux
 alias ll='ls -la'
 
-# aws-cli
-alias aws='docker run --rm -it -v "$HOME/.aws:/root/.aws" mesosphere/aws-cli'
-
 # direnv
 direnv hook fish | source
 
