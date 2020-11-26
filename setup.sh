@@ -8,5 +8,6 @@ ln -sf $(pwd)/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.jso
 
 ln -sf $(pwd)/.vimrc ~/.vimrc
 ln -sf $(pwd)/.zshrc ~/.zshrc
+ln -sf $(pwd)/.zsh_profile ~/.zsh_profile
 ln -sf $(pwd)/.ideavimrc ~/.ideavimrc
 ln -sf $(pwd)/.gitignore_global ~/.gitignore_global

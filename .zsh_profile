@@ -1,0 +1,30 @@
+# ghq list
+alias gh='cd $(ghq root)/$(ghq list | peco)'
+
+# git
+alias g='git'
+alias pull='git pull && git delete-merged-branches'
+alias gp='git push origin head'
+alias gpf='git push -f origin head'
+
+# docker
+alias dc='docker-compose'
+
+# linux
+alias ll='ls -laG'
+
+export AWS_SDK_LOAD_CONFIG=1
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# goenv
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH$HOME/.goenv/bin
+eval "$(goenv init -)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
