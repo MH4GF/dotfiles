@@ -1,8 +1,5 @@
 #!/bin/sh
 
-mkdir -p ~/.config/fish
-ln -sf $(dirname ${0})/.config/fish/config.fish ~/.config/fish/config.fish
-
 mkdir -p ~/.config/karabiner/
 ln -sf $(dirname ${0})/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 
