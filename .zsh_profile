@@ -25,6 +25,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH$HOME/.goenv/bin
 eval "$(goenv init -)"
 
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # direnv
 eval "$(direnv hook zsh)"
 
