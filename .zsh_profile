@@ -29,6 +29,20 @@ alias pull='git pull && git delete-merged-branches'
 alias gp='git push origin head'
 alias gpf='git push --force-with-lease origin head'
 
+## git branches
+function peco-git-recent-branches () {
+    local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
+        perl -pne 's{^refs/heads/}{}' | \
+        peco)
+    if [ -n "$selected_branch" ]; then
+        BUFFER="git checkout ${selected_branch}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-git-recent-branches
+bindkey "^b" peco-git-recent-branches
+
 # docker
 alias dc='docker-compose'
 
