@@ -79,3 +79,8 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # direnv
 eval "$(direnv hook zsh)"
 
+# wakatime
+alias wakatime='docker run --rm -it mh4gf/wakatime-cli'
+
+# oh-my-zsh
+plugins=(wakatime)
