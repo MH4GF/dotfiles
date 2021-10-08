@@ -1,5 +1,5 @@
 # ghq list
-alias gh='cd $(ghq root)/$(ghq list | peco)'
+alias ghql='cd $(ghq root)/$(ghq list | peco)'
 
 # history
 HISTFILE=~/.zsh_history
