@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # ghq list
 alias ghql='cd $(ghq root)/$(ghq list | peco)'
 
@@ -10,7 +12,7 @@ setopt hist_ignore_dups      # 直前と同じコマンドラインはヒスト�
 setopt hist_reduce_blanks    # 余分な空白は詰めて記録
 setopt hist_no_store         # historyコマンドは記録しない
 
-function peco-select-history() {
+peco_select_history() {
     local tac
     if which tac > /dev/null; then
         tac="tac"
@@ -18,13 +20,13 @@ function peco-select-history() {
         tac="tail -r"
     fi
     BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
+        eval "$tac" | \
+        peco --query "$BUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N peco_select_history
+bindkey '^r' peco_select_history
 
 # git
 alias g='git'
@@ -33,7 +35,7 @@ alias gp='git push origin head'
 alias gpf='git push --force-with-lease origin head'
 
 ## git branches
-function peco-git-recent-branches () {
+peco_git_recent_branches () {
     local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
         perl -pne 's{^refs/heads/}{}' | \
         peco)
@@ -43,8 +45,8 @@ function peco-git-recent-branches () {
     fi
     zle clear-screen
 }
-zle -N peco-git-recent-branches
-bindkey "^b" peco-git-recent-branches
+zle -N peco_git_recent_branches
+bindkey "^b" peco_git_recent_branches
 
 # docker
 alias dc='docker-compose'
