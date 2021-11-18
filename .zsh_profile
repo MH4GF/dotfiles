@@ -81,9 +81,6 @@ alias textlint='$HOME/.ghq/github.com/MH4GF/my-textlint/node_modules/.bin/textli
 # rbenv
 eval "$(rbenv init - zsh)"
 
-# ghkw
-source ~/Dropbox/dotfiles/.zsh_credentials
-
 # code-server
 fetch_instance_id () {
     aws --profile ort ec2 describe-instances \
