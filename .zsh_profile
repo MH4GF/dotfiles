@@ -66,6 +66,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH$HOME/.goenv/bin
 eval "$(goenv init -)"
 
+# nodenv
+eval "$(nodenv init -)"
+
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
