@@ -33,6 +33,44 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "英数キーを長押ししている間だけ「かな」通常は「英数」（フットスイッチ用）",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "is_pointing_device": true,
+                                                "product_id": 8455,
+                                                "vendor_id": 16701
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "japanese_eisuu"
+                                },
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "japanese_kana"
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
+                                ],
+                                "type": "basic",
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 10,
+                                    "basic.to_if_held_down_threshold_milliseconds": 10
+                                }
+                            }
+                        ]
                     }
                 ]
             },
