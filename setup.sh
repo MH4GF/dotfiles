@@ -7,3 +7,5 @@ ln -sf $(dirname ${0})/.vimrc ~/.vimrc
 ln -sf $(dirname ${0})/.zsh_profile ~/.zsh_profile
 ln -sf $(dirname ${0})/.ideavimrc ~/.ideavimrc
 ln -sf $(dirname ${0})/.gitignore_global ~/.gitignore_global
+ln -sf $(dirname ${0})/.gitconfig ~/.gitconfig
+

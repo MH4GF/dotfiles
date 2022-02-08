@@ -1,0 +1,15 @@
+[user]
+	name = MH4GF
+	email = h.miyagi.cnw@gmail.com
+[alias]
+	cma = commit --amend
+	co = checkout
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[ghq]
+	root = ~/ghq
+[core]
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
