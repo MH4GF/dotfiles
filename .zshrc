@@ -113,3 +113,6 @@ stop_ide () {
 
 # vscode
 alias devc='devcontainer open'
+
+# starship
+eval "$(starship init zsh)"
