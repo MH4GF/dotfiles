@@ -1,1 +1,7 @@
 add_newline = true
+
+[memory_usage]
+disabled = false
+threshold = -1
+style = "bold dimmed green"
+
