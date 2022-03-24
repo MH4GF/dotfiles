@@ -1,5 +1,19 @@
 #!/bin/sh
 
+# completions
+autoload -Uz compinit
+compinit -u
+
+## 補完で小文字でも大文字にマッチさせる
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+## 補完候補を詰めて表示
+setopt list_packed
+## 補完候補一覧をカラー表示
+autoload colors
+zstyle ':completion:*' list-colors ''
+## コマンドのスペルを訂正
+setopt correct
+
 # ghq list
 alias ghql='cd $(ghq root)/$(ghq list | peco)'
 
