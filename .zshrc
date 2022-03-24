@@ -116,3 +116,6 @@ alias devc='devcontainer open'
 
 # starship
 eval "$(starship init zsh)"
+
+# cpp
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
