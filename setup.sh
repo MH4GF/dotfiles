@@ -3,6 +3,7 @@
 mkdir -p ~/.config/karabiner/
 ln -sf $(dirname ${0})/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ln -sf $(dirname ${0})/.config/starship.toml ~/.config/starship.toml
+ln -sf $(dirname ${0})/.config/gh/config.yml ~/.config/gh/config.yml
 
 ln -sf $(dirname ${0})/.vimrc ~/.vimrc
 ln -sf $(dirname ${0})/.zshrc ~/.zshrc
