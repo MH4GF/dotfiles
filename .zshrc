@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# completions
-autoload -Uz compinit
-compinit -u
-
 ## 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 補完候補を詰めて表示
@@ -13,6 +9,14 @@ autoload colors
 zstyle ':completion:*' list-colors ''
 ## コマンドのスペルを訂正
 setopt correct
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # ghq list
 alias ghql='cd $(ghq root)/$(ghq list | peco)'
