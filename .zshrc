@@ -61,20 +61,6 @@ function g () {
 }
 compdef g=git
 
-## git branches
-peco_git_recent_branches () {
-    local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
-        perl -pne 's{^refs/heads/}{}' | \
-        peco)
-    if [ -n "$selected_branch" ]; then
-        BUFFER="git checkout ${selected_branch}"
-        zle accept-line
-    fi
-    zle clear-screen
-}
-zle -N peco_git_recent_branches
-bindkey "^b" peco_git_recent_branches
-
 # docker
 alias dc='docker-compose'
 

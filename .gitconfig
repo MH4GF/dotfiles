@@ -3,7 +3,7 @@
 	email = h.miyagi.cnw@gmail.com
 [alias]
 	cma = commit --amend
-	co = checkout
+	co = "!f() { [ $# -eq 0 ] && git checkout $(git branch --sort=-authordate | perl -a -nle '$F[0] ne \"*\" and print $F[0]' | fzf --height 40%) || git checkout $@; }; f"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [ghq]
 	root = ~/ghq
