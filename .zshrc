@@ -49,8 +49,8 @@ bindkey '^r' peco_select_history
 # git
 alias g='git'
 alias pull='git pull && git delete-merged-branches'
-alias gp='git push origin head'
-alias gpf='git push --force-with-lease origin head'
+alias gp='git push -u origin head'
+alias gpf='git push -u --force-with-lease origin head'
 
 ## git branches
 peco_git_recent_branches () {
