@@ -62,7 +62,7 @@ function g () {
 compdef g=git
 
 # docker
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # linux
 alias ll='ls -laG'
