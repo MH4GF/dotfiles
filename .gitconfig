@@ -6,6 +6,8 @@
 	co = "!f() { [ $# -eq 0 ] && git checkout $(git branch --sort=-authordate | perl -a -nle '$F[0] ne \"*\" and print $F[0]' | fzf --height 40%) || git checkout $@; }; f"
 	com = "!f() { remote_head=$(git symbolic-ref --quiet refs/remotes/origin/HEAD); remote_head=${remote_head#refs/remotes/origin/}; git checkout ${remote_head:-$(git rev-parse --symbolic --verify --quiet main || git rev-parse --symbolic --verify --quiet master)}; git pull; }; f"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	do = "!f() { if [ -z \"$1\" ]; then echo 'commit message is empty'; exit 1; fi; git commit --allow-empty -m \"doing: $@\"; }; f"
+	save = "!f() { wip_commit=$(git log --grep=\"^doing:\" -n1 --format=%H); git commit --fixup \"$wip_commit\"; git rebase -i --autosquash \"$wip_commit\"~1; }; f"
 [ghq]
 	root = ~/ghq
 [core]
