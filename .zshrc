@@ -47,7 +47,6 @@ zle -N peco_select_history
 bindkey '^r' peco_select_history
 
 # git
-alias pull='git pull && git delete-merged-branches'
 alias gp='git push -u origin head'
 alias gpf='git push -u --force-with-lease origin head'
 
