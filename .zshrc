@@ -111,3 +111,6 @@ alias devc='devcontainer open'
 
 # cpp
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
+
+# GPG key
+export GPG_TTY=$(tty)
