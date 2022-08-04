@@ -30,22 +30,6 @@ setopt hist_ignore_dups      # 直前と同じコマンドラインはヒスト�
 setopt hist_reduce_blanks    # 余分な空白は詰めて記録
 setopt hist_no_store         # historyコマンドは記録しない
 
-peco_select_history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(\history -n 1 | \
-        eval "$tac" | \
-        peco --query "$BUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
-}
-zle -N peco_select_history
-bindkey '^r' peco_select_history
-
 # git
 alias gp='git push -u origin head'
 alias gpf='git push -u --force-with-lease origin head'
