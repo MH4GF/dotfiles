@@ -11,6 +11,7 @@
 	root = ~/ghq
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = code --wait
 [pull]
 	rebase = false
 [init]
