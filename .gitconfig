@@ -13,6 +13,7 @@
 	excludesfile = ~/.gitignore_global
 	editor = code --wait
 	symlinks = true
+	commentChar = >
 [pull]
 	rebase = false
 [init]
