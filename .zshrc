@@ -51,19 +51,6 @@ alias ll='ls -laG'
 
 export AWS_SDK_LOAD_CONFIG=1
 
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-
-# goenv
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH$HOME/.goenv/bin
-eval "$(goenv init -)"
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # wakatime
 alias wakatime='docker run --rm -it mh4gf/wakatime-cli'
 
@@ -72,9 +59,6 @@ plugins=(wakatime)
 
 # textlint
 alias textlint='$HOME/.ghq/github.com/MH4GF/my-textlint/node_modules/.bin/textlint -c $HOME/.ghq/github.com/MH4GF/my-textlint/.textlintrc'
-
-# rbenv
-eval "$(rbenv init - zsh)"
 
 # code-server
 fetch_instance_id () {
@@ -114,3 +98,6 @@ export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
 
 # GPG key
 export GPG_TTY=$(tty)
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
