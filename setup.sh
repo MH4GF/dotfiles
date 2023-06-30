@@ -13,3 +13,4 @@ ln -sf $(dirname ${0})/.zshrc ~/.zshrc
 ln -sf $(dirname ${0})/.ideavimrc ~/.ideavimrc
 ln -sf $(dirname ${0})/.gitignore_global ~/.gitignore_global
 ln -sf $(dirname ${0})/.gitconfig ~/.gitconfig
+ln -sf $(dirname ${0})/.tool-versions ~/.tool-versions
