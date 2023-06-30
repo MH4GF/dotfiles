@@ -120,5 +120,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
+zinit load azu/ni.zsh
+
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
