@@ -14,6 +14,8 @@
 	editor = code --wait
 	symlinks = true
 	commentChar = >
+[fetch]
+	prune = true
 [pull]
 	rebase = false
 [init]
