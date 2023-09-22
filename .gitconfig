@@ -21,3 +21,5 @@
 	path = ~/.gitconfig.local
 [commit]
 	gpgsign = true
+[github-nippou]
+	user = MH4GF
