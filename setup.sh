@@ -16,3 +16,4 @@ ln -sf $(dirname ${0})/.zshrc ~/.zshrc
 ln -sf $(dirname ${0})/.ideavimrc ~/.ideavimrc
 ln -sf $(dirname ${0})/.gitconfig ~/.gitconfig
 ln -sf $(dirname ${0})/.tool-versions ~/.tool-versions
+ln -sf $(dirname ${0})/.asdfrc ~/.asdfrc
