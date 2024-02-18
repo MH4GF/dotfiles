@@ -126,3 +126,9 @@ zinit load azu/ni.zsh
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# starship
+eval "$(starship init zsh)"
+
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
