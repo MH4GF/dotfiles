@@ -132,3 +132,13 @@ eval "$(starship init zsh)"
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# deno
+export PATH="/Users/mh4gf/.deno/bin:$PATH"
+
+# go
+export PATH="/Users/mh4gf/go/bin:$PATH"
+
+# bun completions
+[ -s "/Users/mh4gf/.bun/_bun" ] && source "/Users/mh4gf/.bun/_bun"
+export PATH="$HOME/.bun/bin:$PATH"
