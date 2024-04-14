@@ -24,3 +24,5 @@
 	gpgsign = true
 [github-nippou]
 	user = MH4GF
+[rerere]
+	enabled = true
