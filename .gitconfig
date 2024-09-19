@@ -26,3 +26,5 @@
 	user = MH4GF
 [rerere]
 	enabled = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
