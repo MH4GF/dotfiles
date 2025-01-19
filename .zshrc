@@ -60,36 +60,6 @@ plugins=(wakatime)
 # textlint
 alias textlint='$HOME/.ghq/github.com/MH4GF/my-textlint/node_modules/.bin/textlint -c $HOME/.ghq/github.com/MH4GF/my-textlint/.textlintrc'
 
-# code-server
-fetch_instance_id () {
-    aws --profile ort ec2 describe-instances \
-        --filter "Name=tag-key,Values=Name" "Name=tag-value,Values=$1" \
-        --query "Reservations[0].Instances[0].InstanceId" \
-        --output text
-}
-
-function start_ide () {
-    local instance_name=mh4gf-code-server
-    local instance_id=$(echo $(fetch_instance_id mh4gf-code-server))
-
-    if [ -n "$instance_id" ]; then
-        aws --profile ort ec2 start-instances --instance-ids ${instance_id}
-    else
-        echo "could not found instance with ${instance_name}"
-    fi
-}
-
-stop_ide () {
-    local instance_name=mh4gf-code-server
-    local instance_id=$(echo $(fetch_instance_id mh4gf-code-server))
-
-    if [ -n "$instance_id" ]; then
-        aws --profile ort ec2 stop-instances --instance-ids ${instance_id}
-    else
-        echo "could not found instance with ${instance_name}"
-    fi
-}
-
 # vscode
 alias devc='devcontainer open'
 
