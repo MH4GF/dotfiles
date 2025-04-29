@@ -9,7 +9,7 @@
 [ghq]
 	root = ~/ghq
 [core]
-	editor = code --wait
+	editor = cursor --wait
 	symlinks = true
 	commentChar = >
 [fetch]
