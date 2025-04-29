@@ -17,3 +17,7 @@ ln -sf $(dirname ${0})/.ideavimrc ~/.ideavimrc
 ln -sf $(dirname ${0})/.gitconfig ~/.gitconfig
 ln -sf $(dirname ${0})/.tool-versions ~/.tool-versions
 ln -sf $(dirname ${0})/.asdfrc ~/.asdfrc
+
+# Claude settings
+mkdir -p ~/.claude
+ln -sf $(dirname ${0})/.claude/commands ~/.claude/commands
