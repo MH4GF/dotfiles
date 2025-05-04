@@ -21,3 +21,4 @@ ln -sf $(dirname ${0})/.asdfrc ~/.asdfrc
 # Claude settings
 mkdir -p ~/.claude
 ln -sf $(dirname ${0})/.claude/commands ~/.claude/commands
+ln -sf $(dirname ${0})/.claude/CLAUDE.md ~/.claude/CLAUDE.md
