@@ -22,3 +22,4 @@ ln -sf $(dirname ${0})/.asdfrc ~/.asdfrc
 mkdir -p ~/.claude
 ln -sf $(dirname ${0})/.claude/commands ~/.claude/commands
 ln -sf $(dirname ${0})/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf $(dirname ${0})/.claude/settings.json ~/.claude/settings.json

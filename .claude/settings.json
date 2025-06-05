@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(ls:*)",
+      "Bash(pnpm fmt:*)",
+      "Bash(pnpm install)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm eslint:*)",
+      "Bash(pnpm run lint:*)",
+      "Bash(pnpm run lint:turbo:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:github.com)",
+      "mcp__ide__getDiagnostics",
+      "Bash(rg:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(sed:*)",
+      "Bash(git diff:*)"
+    ],
+    "deny": []
+  }
+}
