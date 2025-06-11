@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(cat:*)",
+      "Bash(mkdir:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr view:*)",
       "Bash(git add:*)",
@@ -15,6 +16,7 @@
       "Bash(pnpm eslint:*)",
       "Bash(pnpm run lint:*)",
       "Bash(pnpm run lint:turbo:*)",
+      "Bash(pnpm build:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
