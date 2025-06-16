@@ -30,8 +30,8 @@ setopt hist_reduce_blanks    # 余分な空白は詰めて記録
 setopt hist_no_store         # historyコマンドは記録しない
 
 # git
-alias gp='git push -u origin head'
-alias gpf='git push -u --force-with-lease origin head'
+alias gp='git push -u origin $(git branch --show-current)'
+alias gpf='git push -u --force-with-lease origin $(git branch --show-current)'
 
 function g () {
     if [[ $# > 0 ]]
