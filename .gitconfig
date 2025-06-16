@@ -5,6 +5,21 @@
 	cma = commit --amend
 	co = "!f() { [ $# -eq 0 ] && git checkout $(git branch --sort=-authordate | perl -a -nle '$F[0] ne \"*\" and print $F[0]' | peco) || git checkout $@; }; f"
 	com = "!f() { remote_head=$(git symbolic-ref --quiet refs/remotes/origin/HEAD); remote_head=${remote_head#refs/remotes/origin/}; git checkout ${remote_head:-$(git rev-parse --symbolic --verify --quiet main || git rev-parse --symbolic --verify --quiet master)}; git pull; git branch --merged | grep -v \"*\" | xargs -I % git branch -d %; }; f"
+	comw = "!f() { \
+		remote_head=$(git symbolic-ref --quiet refs/remotes/origin/HEAD); \
+		remote_head=${remote_head#refs/remotes/origin/}; \
+		main_branch=${remote_head:-$(git rev-parse --symbolic --verify --quiet main || git rev-parse --symbolic --verify --quiet master)}; \
+		git checkout $main_branch; \
+		git pull; \
+		merged_branches=$(git branch --merged | grep -v \"*\" | grep -v \"origin/\" | sed 's/^[+ ]*//' | tr -d ' '); \
+		git worktree list | tail -n +2 | while read path hash branch; do \
+			branch_name=$(echo $branch | tr -d '[]'); \
+			if echo \"$merged_branches\" | grep -q \"^$branch_name$\"; then \
+				git worktree remove \"$path\" 2>/dev/null || true; \
+			fi; \
+		done; \
+		git branch --merged | grep -v \"*\" | grep -v \"origin/\" | sed 's/^[+ ]*//' | xargs -I % git branch -d % 2>/dev/null || true; \
+	}; f"
 	cp = cherry-pick
 	wt = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); git worktree add ../${repo_name}-worktree/$1 -b $1; }; f"
 	wtr = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); git worktree add ../${repo_name}-worktree/$1 origin/$1; }; f"
