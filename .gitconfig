@@ -21,8 +21,8 @@
 		git branch --merged | grep -v \"*\" | grep -v \"origin/\" | sed 's/^[+ ]*//' | xargs -I % git branch -d % 2>/dev/null || true; \
 	}; f"
 	cp = cherry-pick
-	wt = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} -b $1; }; f"
-	wtr = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} origin/$1; }; f"
+	wa = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} -b $1; }; f"
+	war = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} origin/$1; }; f"
 [ghq]
 	root = ~/ghq
 [core]
