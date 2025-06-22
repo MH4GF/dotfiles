@@ -22,7 +22,7 @@
 	}; f"
 	cp = cherry-pick
 	wa = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} -b $1; }; f"
-	war = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add ../${repo_name}-worktree/${branch_dir} origin/$1; }; f"
+	war = "!f() { repo_name=$(basename $(git rev-parse --show-toplevel)); branch_dir=$(echo $1 | tr '/' '-'); git worktree add --track -b $1 ../${repo_name}-worktree/${branch_dir} origin/$1; }; f"
 [ghq]
 	root = ~/ghq
 [core]
