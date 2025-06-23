@@ -8,11 +8,13 @@
 - `commit` - ステージングされた変更をコミット
 - `push` - コミットをリモートリポジトリにプッシュ
 - `pr` - プルリクエストを作成
+- `merge` - origin/mainをマージしてコンフリクトを解消
 
 使用例:
 - `/user:git-workflow add,commit,push` - 変更をステージング、コミット、プッシュ
 - `/user:git-workflow checkout,add,commit,push` - 新しいブランチを作成し、変更をステージング、コミット、プッシュ
 - `/user:git-workflow checkout,commit,push,pr` - 新しいブランチを作成し、コミット、プッシュ、PR作成まで実行
+- `/user:git-workflow merge` - origin/mainをマージしてコンフリクトを解消
 
 処理手順:
 1. カンマ区切りの操作リストを解析
@@ -22,6 +24,7 @@
    - `commit`の場合、説明的なメッセージでコミットを作成
    - `push`の場合、変更をリモートリポジトリにプッシュ
    - `pr`の場合、GitHub CLIを使用してプルリクエストを作成
+   - `merge`の場合、origin/mainをマージしてコンフリクトを解消
 3. 各操作の成功を確認
 
 このコマンドは必要に応じて追加情報を要求します:
