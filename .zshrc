@@ -134,3 +134,49 @@ alias claude="/Users/mh4gf/.claude/local/claude"
 #   *) export PATH="$PNPM_HOME:$PATH" ;;
 # esac
 # # pnpm end
+
+# Draft PRを作成してCIが通ったら自動でreadyにする
+pr_auto_ready() {
+  local checks_status
+  local timeout=${1:-600}  # デフォルト10分
+  local check_interval=10
+  local elapsed=0
+  
+  # PRがdraftかチェック
+  local is_draft=$(gh pr view --json isDraft --jq '.isDraft' 2>/dev/null)
+  if [ "$is_draft" != "true" ]; then
+    echo "Current PR is not a draft"
+    return 0
+  fi
+  
+  local pr_number=$(gh pr view --json number --jq '.number' 2>/dev/null)
+  echo "Monitoring PR #$pr_number for check completion..."
+  
+  while [ $elapsed -lt $timeout ]; do
+    # チェック状況を取得（WIPを除外してカウント）
+    total_checks=$(gh pr checks 2>/dev/null | grep -v "^$" | grep -v "^WIP" | wc -l | tr -d ' ')
+    passed_checks=$(gh pr checks 2>/dev/null | grep -v "^WIP" | grep "pass" | wc -l | tr -d ' ')
+    
+    if [ "$total_checks" -gt 0 ] && [ "$total_checks" -eq "$passed_checks" ]; then
+      echo "All checks passed! Would convert PR to ready (dry-run mode)"
+      echo "Command would run: gh pr ready"
+      echo "PR #$pr_number would be ready for review"
+      return 0
+    fi
+    
+    echo "Waiting for checks to complete... (${elapsed}s/${timeout}s)"
+    echo "Status: $passed_checks/$total_checks checks passed"
+    
+    # 失敗・待機中のチェックを表示（WIPを除外）
+    gh pr checks 2>/dev/null | grep -v "pass" | grep -v "^WIP" | while read -r line; do
+      if [ -n "$line" ]; then
+        echo "  Waiting: $line"
+      fi
+    done
+    sleep $check_interval
+    elapsed=$((elapsed + check_interval))
+  done
+  
+  echo "Timeout reached. Some checks may still be running."
+  return 1
+}
