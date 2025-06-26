@@ -180,3 +180,6 @@ pr_auto_ready() {
   echo "Timeout reached. Some checks may still be running."
   return 1
 }
+
+# Load secrets if exists
+[ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
