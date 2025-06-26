@@ -1,0 +1,15 @@
+# Secrets and sensitive files
+.zsh_secrets
+.zshrc.secrets
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+*~
