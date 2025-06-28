@@ -63,6 +63,10 @@ alias textlint='$HOME/.ghq/github.com/MH4GF/my-textlint/node_modules/.bin/textli
 # vscode
 alias devc='devcontainer open'
 
+# neovim + telescope
+alias nf="nvim -c 'Telescope find_files'"
+alias ng="nvim -c 'Telescope live_grep'"
+
 # cpp
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
 

@@ -55,4 +55,13 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
     end,
   },
+
+  -- Git integration
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
+      vim.keymap.set("n", "<leader>gd", ":Git diff --staged<CR>", { desc = "Git diff staged" })
+    end,
+  },
 })
