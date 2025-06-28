@@ -47,6 +47,17 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = {},
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
+      })
+      
       local builtin = require("telescope.builtin")
       -- 一般的なTelescope keymaps
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
