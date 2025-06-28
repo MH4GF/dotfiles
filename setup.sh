@@ -12,6 +12,10 @@ mkdir -p ~/.ssh
 ln -sf $(dirname ${0})/.ssh/config ~/.ssh/config
 
 ln -sf $(dirname ${0})/.vimrc ~/.vimrc
+
+# Neovim
+mkdir -p ~/.config/nvim
+ln -sf $(dirname ${0})/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf $(dirname ${0})/.zshrc ~/.zshrc
 ln -sf $(dirname ${0})/.ideavimrc ~/.ideavimrc
 ln -sf $(dirname ${0})/.gitconfig ~/.gitconfig
