@@ -9,48 +9,46 @@ vim.opt.expandtab = true        -- タブをスペースに変換
 vim.opt.tabstop = 2             -- タブ幅を2に設定
 vim.opt.shiftwidth = 2          -- インデント幅を2に設定
 
+-- ヘルパー関数
+local function extract_real_path(path)
+  -- fugitiveのパスから実際のファイルパスを抽出
+  if path:match("^fugitive://") then
+    local real_path = vim.fn.FugitiveReal(path)
+    if real_path:match("^fugitive://") then
+      real_path = real_path:match("/%.git/.-//%d+/(.*)$") or real_path
+    end
+    return real_path
+  end
+  return path
+end
+
+local function get_relative_path(path)
+  -- 絶対パスの場合は相対パスに変換
+  if path:match("^/") then
+    return vim.fn.fnamemodify(path, ":.")
+  end
+  return path
+end
+
+local function get_current_file_path()
+  local path = vim.fn.expand("%")
+  path = extract_real_path(path)
+  return get_relative_path(path)
+end
+
 -- キーマッピング
 vim.keymap.set("i", "jj", "<ESC>", { desc = "jjでインサートモードを抜ける" })
 
 -- ファイルパス関連
 vim.keymap.set("n", "<leader>cp", function()
-  local path = vim.fn.expand("%")
-  -- fugitiveのパスから実際のファイルパスを抽出
-  if path:match("^fugitive://") then
-    -- fugitiveパスから実際のファイルパスを取得
-    path = vim.fn.FugitiveReal(path)
-    -- それでも取得できない場合は、パターンマッチで抽出
-    if path:match("^fugitive://") then
-      path = path:match("/%.git/.-//%d+/(.*)$") or path
-    end
-  end
-  
-  -- 絶対パスの場合は相対パスに変換
-  if path:match("^/") then
-    path = vim.fn.fnamemodify(path, ":.")
-  end
-  
+  local path = get_current_file_path()
   vim.fn.setreg("+", path)
   print("Copied: " .. path)
 end, { desc = "Copy relative file path" })
 
 -- ファイルパスとコード選択範囲をコピー
 vim.keymap.set("v", "<leader>cc", function()
-  local path = vim.fn.expand("%")
-  -- fugitiveのパスから実際のファイルパスを抽出
-  if path:match("^fugitive://") then
-    -- fugitiveパスから実際のファイルパスを取得
-    path = vim.fn.FugitiveReal(path)
-    -- それでも取得できない場合は、パターンマッチで抽出
-    if path:match("^fugitive://") then
-      path = path:match("/%.git/.-//%d+/(.*)$") or path
-    end
-  end
-  
-  -- 絶対パスの場合は相対パスに変換
-  if path:match("^/") then
-    path = vim.fn.fnamemodify(path, ":.")
-  end
+  local path = get_current_file_path()
   
   -- 選択範囲のテキストを取得
   vim.cmd('normal! "vy')
@@ -65,39 +63,14 @@ end, { desc = "Copy file path with selected code" })
 
 -- GitHub でファイルを開く
 vim.keymap.set("n", "<leader>gh", function()
-  local path = vim.fn.expand("%")
-  -- fugitiveのパスから実際のファイルパスを抽出
-  if path:match("^fugitive://") then
-    path = vim.fn.FugitiveReal(path)
-    if path:match("^fugitive://") then
-      path = path:match("/%.git/.-//%d+/(.*)$") or path
-    end
-  end
-  
-  -- 絶対パスの場合は相対パスに変換
-  if path:match("^/") then
-    path = vim.fn.fnamemodify(path, ":.")
-  end
-  
+  local path = get_current_file_path()
   vim.cmd("!gh browse " .. path .. " --commit")
   print("Opening: " .. path .. " in GitHub at current commit")
 end, { desc = "Open file in GitHub at current commit" })
 
 -- GitHub でファイルを行番号付きで開く（ビジュアルモード）
 vim.keymap.set("v", "<leader>gh", function()
-  local path = vim.fn.expand("%")
-  -- fugitiveのパスから実際のファイルパスを抽出
-  if path:match("^fugitive://") then
-    path = vim.fn.FugitiveReal(path)
-    if path:match("^fugitive://") then
-      path = path:match("/%.git/.-//%d+/(.*)$") or path
-    end
-  end
-  
-  -- 絶対パスの場合は相対パスに変換
-  if path:match("^/") then
-    path = vim.fn.fnamemodify(path, ":.")
-  end
+  local path = get_current_file_path()
   
   -- 選択範囲を取得（ビジュアルモード中に取得）
   local start_line = vim.fn.line("v")
