@@ -188,4 +188,48 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>gd", ":Git diff --staged<CR>", { desc = "Git diff staged" })
     end,
   },
+
+  -- LSP Configuration
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+    config = function()
+      -- Setup mason first
+      require("mason").setup()
+      
+      -- Setup mason-lspconfig
+      require("mason-lspconfig").setup({
+        ensure_installed = { "ts_ls" },
+      })
+
+      -- Get lspconfig
+      local lspconfig = require("lspconfig")
+      
+      -- Setup ts_ls
+      lspconfig.ts_ls.setup({
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+      })
+      
+      -- LSPAttachイベントを使用してキーマッピングを設定
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+        callback = function(ev)
+          -- Enable completion triggered by <c-x><c-o>
+          vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+          
+          -- Buffer local mappings.
+          local opts = { buffer = ev.buf }
+          vim.keymap.set('n', '<F12>', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', '<F24>', vim.lsp.buf.references, opts)  -- Shift+F12
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        end,
+      })
+    end,
+  },
+
 })
