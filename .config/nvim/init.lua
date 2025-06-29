@@ -15,9 +15,53 @@ vim.keymap.set("i", "jj", "<ESC>", { desc = "jjでインサートモードを抜
 -- ファイルパス関連
 vim.keymap.set("n", "<leader>cp", function()
   local path = vim.fn.expand("%")
+  -- fugitiveのパスから実際のファイルパスを抽出
+  if path:match("^fugitive://") then
+    -- fugitiveパスから実際のファイルパスを取得
+    path = vim.fn.FugitiveReal(path)
+    -- それでも取得できない場合は、パターンマッチで抽出
+    if path:match("^fugitive://") then
+      path = path:match("/%.git/.-//%d+/(.*)$") or path
+    end
+  end
+  
+  -- 絶対パスの場合は相対パスに変換
+  if path:match("^/") then
+    path = vim.fn.fnamemodify(path, ":.")
+  end
+  
   vim.fn.setreg("+", path)
   print("Copied: " .. path)
 end, { desc = "Copy relative file path" })
+
+-- ファイルパスとコード選択範囲をコピー
+vim.keymap.set("v", "<leader>cc", function()
+  local path = vim.fn.expand("%")
+  -- fugitiveのパスから実際のファイルパスを抽出
+  if path:match("^fugitive://") then
+    -- fugitiveパスから実際のファイルパスを取得
+    path = vim.fn.FugitiveReal(path)
+    -- それでも取得できない場合は、パターンマッチで抽出
+    if path:match("^fugitive://") then
+      path = path:match("/%.git/.-//%d+/(.*)$") or path
+    end
+  end
+  
+  -- 絶対パスの場合は相対パスに変換
+  if path:match("^/") then
+    path = vim.fn.fnamemodify(path, ":.")
+  end
+  
+  -- 選択範囲のテキストを取得
+  vim.cmd('normal! "vy')
+  local selected_text = vim.fn.getreg("v")
+  
+  -- フォーマットを作成
+  local formatted = "@" .. path .. "\n\n```\n" .. selected_text .. "\n```"
+  
+  vim.fn.setreg("+", formatted)
+  print("Copied: @" .. path .. " with selected text")
+end, { desc = "Copy file path with selected code" })
 
 
 -- 設定再読み込み（lazy.nvim対応）
@@ -58,7 +102,6 @@ require("lazy").setup({
         pickers = {
           find_files = {
             hidden = true,
-            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
           },
         },
       })
