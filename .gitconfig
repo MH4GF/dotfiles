@@ -27,7 +27,7 @@
 [ghq]
 	root = ~/ghq
 [core]
-	editor = cursor --wait
+	editor = nvim
 	symlinks = true
 	commentChar = >
 [fetch]
