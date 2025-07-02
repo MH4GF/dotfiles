@@ -27,6 +27,7 @@
       "Bash(sed:*)",
       "Bash(git diff:*)",
       "Bash(gh search:*)",
+      "Bash(jq:*)",
       "mcp__playwright__browser_*"
     ],
     "deny": [
