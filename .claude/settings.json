@@ -11,6 +11,7 @@
       "Bash(mkdir:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
       "Bash(git add:*)",
       "Bash(git fetch:*)",
       "Bash(git rev-parse:*)",
