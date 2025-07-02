@@ -30,6 +30,7 @@
       "Bash(gh search:*)",
       "Bash(jq:*)",
       "Bash(duckdb:*)",
+      "Bash(git worktree list:*)",
       "mcp__playwright__browser_*"
     ],
     "deny": [
