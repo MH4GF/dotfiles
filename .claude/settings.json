@@ -25,7 +25,9 @@
       "Bash(rg:*)",
       "Bash(gh pr diff:*)",
       "Bash(sed:*)",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "Bash(gh search:*)",
+      "mcp__playwright__browser_*"
     ],
     "deny": [
       "Bash(rm -rf /)",
