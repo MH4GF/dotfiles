@@ -53,4 +53,3 @@ $ARGUMENTS
 ```
 
 Create the most appropriate command structure for the user's needs.
-
