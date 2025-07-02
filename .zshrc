@@ -190,3 +190,5 @@ pr_auto_ready() {
 
 # Load secrets if exists
 [ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
+
+export PATH='/Users/mh4gf/.duckdb/cli/latest':$PATH
