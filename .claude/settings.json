@@ -28,6 +28,7 @@
       "Bash(git diff:*)",
       "Bash(gh search:*)",
       "Bash(jq:*)",
+      "Bash(duckdb:*)",
       "mcp__playwright__browser_*"
     ],
     "deny": [
