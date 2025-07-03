@@ -17,6 +17,7 @@
       "Bash(git rev-parse:*)",
       "Bash(ls:*)",
       "Bash(pnpm:*)",
+      "Bash(npm view:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
