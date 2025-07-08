@@ -13,6 +13,7 @@
       "Bash(gh issue list:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr list:*)",
+      "Bash(gh pr checks:*)",
       "Bash(gh run view:*)",
       "Bash(git add:*)",
       "Bash(git fetch:*)",
