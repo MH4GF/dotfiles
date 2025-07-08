@@ -130,7 +130,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.transcript_path' | xargs cat | jq -r 'select(.type == \"assistant\")' | jq -sr '.[-1].message.content[-1].text' | say"
+            "command": "jq -r '.transcript_path' | xargs cat | jq -r 'select(.type == \"assistant\")' | jq -sr '.[-1].message.content[-1].text' | nohup say > /dev/null 2>&1 &"
           }
         ]
       }
