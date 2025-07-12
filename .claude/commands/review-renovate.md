@@ -18,7 +18,10 @@ flowchart TD
     CheckCI -->|Yes| VersionType{Version change type}
     
     Investigation --> Checkout[gh pr checkout to get locally]
-    Checkout --> Install[pnpm install to update dependencies]
+    Checkout --> CheckConflicts{Conflicts exist?}
+    CheckConflicts -->|Yes| ResolveConflicts[Resolve merge conflicts manually]
+    CheckConflicts -->|No| Install[pnpm install to update dependencies]
+    ResolveConflicts --> Install[pnpm install to update dependencies]
     Install --> RunTests[Run pnpm test/build/lint]
     RunTests --> FixIssue{Fixable?}
     FixIssue -->|Yes| ApplyFix[Apply fix]
