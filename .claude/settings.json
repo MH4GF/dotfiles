@@ -111,7 +111,8 @@
       "Write(/etc/passwd)",
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "PostToolUse": [
@@ -137,6 +138,5 @@
       }
     ]
   },
-  "defaultMode": "acceptEdits",
   "model": "sonnet"
 }
