@@ -36,6 +36,7 @@
       "Bash(sed:*)",
       "Bash(git diff:*)",
       "Bash(git switch:*)",
+      "Bash(git rebase:*)",
       "Bash(gh search:*)",
       "Bash(jq:*)",
       "Bash(duckdb:*)",
