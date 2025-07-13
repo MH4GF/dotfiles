@@ -27,3 +27,6 @@ mkdir -p ~/.claude
 ln -sf $(dirname ${0})/.claude/commands ~/.claude/commands
 ln -sf $(dirname ${0})/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf $(dirname ${0})/.claude/settings.json ~/.claude/settings.json
+
+# Claude MCP setup
+$(dirname ${0})/setup_claude_mcp.sh
