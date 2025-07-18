@@ -24,6 +24,7 @@
       "Bash(ls:*)",
       "Bash(pnpm:*)",
       "Bash(npm view:*)",
+      "Bash(npm install:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
