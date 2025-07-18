@@ -12,9 +12,6 @@ if ! command -v claude >/dev/null 2>&1; then
 fi
 
 # Add MCP servers (user scope)
-echo "➕ Adding container-use MCP server..."
-claude mcp add container-use --scope user -- container-use stdio
-
 echo "➕ Adding playwright MCP server..."
 claude mcp add playwright --scope user -- npx @playwright/mcp@latest
 
