@@ -15,6 +15,9 @@ fi
 echo "➕ Adding playwright MCP server..."
 claude mcp add playwright --scope user -- npx @playwright/mcp@latest
 
+echo "➕ Adding context7 MCP server..."
+claude mcp add --transport http --scope user context7 https://mcp.context7.com/mcp
+
 echo "🎉 Claude MCP setup completed!"
 echo ""
 echo "📋 Current MCP servers:"
