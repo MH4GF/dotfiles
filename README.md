@@ -16,7 +16,7 @@ This will:
 - Install all packages from Brewfile
 - Setup dotfiles symlinks
 - Configure macOS system preferences
-- Install development tools via asdf
+- Install development tools via mise
 
 ### Dotfiles Only Setup
 
@@ -34,7 +34,7 @@ If you just want to setup the dotfiles without installing packages:
 - `.config/` - Application configurations
 - `.zshrc` - Zsh configuration
 - `.gitconfig` - Git configuration
-- `.tool-versions` - asdf version management
+- `mise.toml` - mise tool management
 
 ## 🔧 Manual Setup
 

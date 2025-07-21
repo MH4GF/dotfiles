@@ -55,10 +55,10 @@ echo "📥 Setting up dotfiles..."
 ghq get --update git@github.com:MH4GF/dotfiles.git
 ~/ghq/github.com/MH4GF/dotfiles/setup.sh
 
-# Setup asdf tools
-echo "🛠 Installing development tools with asdf..."
-if [[ -f ~/.tool-versions ]]; then
-    asdf install
+# Setup mise tools
+echo "🛠 Installing development tools with mise..."
+if [[ -f ~/ghq/github.com/MH4GF/dotfiles/mise.toml ]]; then
+    mise install
 fi
 
 # macOS System Preferences
