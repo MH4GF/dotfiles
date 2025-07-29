@@ -101,8 +101,8 @@ zinit light-mode for \
 
 zinit load azu/ni.zsh
 
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# mise
+eval "$(mise activate zsh)"
 
 # starship
 eval "$(starship init zsh)"

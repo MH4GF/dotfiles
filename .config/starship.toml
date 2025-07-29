@@ -5,3 +5,6 @@ disabled = false
 threshold = -1
 style = "bold dimmed green"
 
+[nodejs]
+disabled = true
+
