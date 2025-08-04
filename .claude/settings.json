@@ -34,6 +34,7 @@
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:zenn.dev)",
       "WebFetch(domain:liambx.com)",
+      "WebFetch(domain:smith.langchain.com)",
       "mcp__ide__getDiagnostics",
       "Bash(rg:*)",
       "Bash(gh pr diff:*)",
