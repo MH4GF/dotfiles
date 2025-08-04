@@ -33,6 +33,7 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:zenn.dev)",
+      "WebFetch(domain:liambx.com)",
       "mcp__ide__getDiagnostics",
       "Bash(rg:*)",
       "Bash(gh pr diff:*)",
