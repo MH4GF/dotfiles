@@ -6,17 +6,18 @@
 echo "🔧 Setting up Claude MCP servers..."
 
 # Check if Claude CLI is available
-if ! command -v claude >/dev/null 2>&1; then
-    echo "❌ Claude CLI not found. Please install Claude Code first."
+CLAUDE_PATH="$HOME/.claude/local/claude"
+if [ ! -f "$CLAUDE_PATH" ]; then
+    echo "❌ Claude CLI not found at $CLAUDE_PATH. Please install Claude Code first."
     exit 1
 fi
 
 # Add MCP servers (user scope)
 echo "➕ Adding playwright MCP server..."
-claude mcp add playwright --scope user -- npx @playwright/mcp@latest
+"$CLAUDE_PATH" mcp add playwright --scope user -- npx @playwright/mcp@latest
 
 echo "➕ Adding context7 MCP server..."
-claude mcp add --transport http --scope user context7 https://mcp.context7.com/mcp
+"$CLAUDE_PATH" mcp add --transport http --scope user context7 https://mcp.context7.com/mcp
 
 echo "➕ Adding serena MCP server..."
 claude mcp add serena --scope user -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant
@@ -24,4 +25,4 @@ claude mcp add serena --scope user -- uvx --from git+https://github.com/oraios/s
 echo "🎉 Claude MCP setup completed!"
 echo ""
 echo "📋 Current MCP servers:"
-claude mcp list
+"$CLAUDE_PATH" mcp list
