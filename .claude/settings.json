@@ -45,7 +45,8 @@
       "Bash(jq:*)",
       "Bash(duckdb:*)",
       "Bash(git worktree list:*)",
-      "mcp__playwright__browser_*"
+      "mcp__playwright__browser_*",
+      "mcp__playwright__browser_navigate"
     ],
     "deny": [
       "Bash(rm -rf /)",
