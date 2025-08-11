@@ -46,7 +46,19 @@
       "Bash(duckdb:*)",
       "Bash(git worktree list:*)",
       "mcp__playwright__browser_*",
-      "mcp__playwright__browser_navigate"
+      "mcp__playwright__browser_navigate",
+      "mcp__serena__search_for_pattern",
+      "mcp__serena__activate_project",
+      "mcp__serena__check_onboarding_performed",
+      "mcp__serena__find_file",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_console_messages",
+      "mcp__serena__list_dir",
+      "mcp__serena__get_symbols_overview",
+      "mcp__serena__write_memory",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__serena__find_symbol"
     ],
     "deny": [
       "Bash(rm -rf /)",
