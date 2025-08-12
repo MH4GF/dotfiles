@@ -58,7 +58,8 @@
       "mcp__serena__write_memory",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "mcp__serena__find_symbol"
+      "mcp__serena__find_symbol",
+      "mcp__serena__onboarding"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -130,7 +131,8 @@
       "Write(~/.ssh/*_ed25519)",
       "Write(/etc/passwd)",
       "Write(/etc/shadow)",
-      "Write(/etc/sudoers)"
+      "Write(/etc/sudoers)",
+      "mcp__serena__replace_regex"
     ],
     "defaultMode": "acceptEdits"
   },
