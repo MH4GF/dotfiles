@@ -192,3 +192,6 @@ pr_auto_ready() {
 [ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
 
 export PATH='/Users/mh4gf/.duckdb/cli/latest':$PATH
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.local/bin:$PATH"
