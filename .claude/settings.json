@@ -60,7 +60,16 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
       "mcp__serena__find_symbol",
-      "mcp__serena__onboarding"
+      "mcp__serena__onboarding",
+      "Bash(npm -w apps/frontend run test:compile)",
+      "Bash(npm -w apps/frontend run lint)",
+      "Bash(npm -w apps/frontend run build)",
+      "Bash(npm -w apps/frontend run storybook:build)",
+      "Bash(npm -w apps/frontend run storybook)",
+      "mcp__playwright__browser_evaluate",
+      "Bash(npm -w apps/frontend run format:check)",
+      "Bash(npm -w apps/frontend run format:fix)",
+      "Bash(npm -w apps/frontend run test)"
     ],
     "deny": [
       "Bash(rm -rf /)",
