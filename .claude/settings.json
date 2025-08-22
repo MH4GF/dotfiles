@@ -146,7 +146,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -171,7 +170,12 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); user=$(whoami); hostname=$(hostname -s); cwd=$(echo \"$input\" | jq -r '.workspace.current_dir // .cwd' | sed \"s|$HOME|~|g\"); model=$(echo \"$input\" | jq -r '.model.display_name'); mem=$(printf '%.0f' $(echo \"scale=1; $(ps -o rss= -p $$) / 1024\" | bc 2>/dev/null || echo \"0\"))MB; git_info=$(git -C \"$(echo \"$input\" | jq -r '.workspace.current_dir // .cwd')\" symbolic-ref --short HEAD 2>/dev/null | sed 's/^/ (/;s/$/)/' || echo ''); printf \"\\033[2m%s@%s %s%s [%s] [%s]\\033[0m\" \"$user\" \"$hostname\" \"$cwd\" \"$git_info\" \"$model\" \"$mem\""
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  }
+  },
+  "model": "sonnet"
 }
