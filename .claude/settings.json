@@ -60,6 +60,7 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
       "mcp__serena__find_symbol",
+      "mcp__serena__find_referencing_symbols",
       "mcp__serena__onboarding",
       "Bash(npm -w apps/frontend run test:compile)",
       "Bash(npm -w apps/frontend run lint)",
