@@ -137,7 +137,8 @@
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)",
       "mcp__serena__replace_regex",
-      "mcp__serena__replace_symbol_body"
+      "mcp__serena__replace_symbol_body",
+      "mcp__serena__insert_after_symbol"
     ],
     "defaultMode": "acceptEdits"
   },
