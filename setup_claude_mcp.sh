@@ -13,8 +13,8 @@ if [ ! -f "$CLAUDE_PATH" ]; then
 fi
 
 # Add MCP servers (user scope)
-echo "➕ Adding playwright MCP server..."
-"$CLAUDE_PATH" mcp add playwright --scope user -- npx @playwright/mcp@latest
+echo "➕ Adding chrome-devtools MCP server..."
+"$CLAUDE_PATH" mcp add chrome-devtools --scope user -- npx chrome-devtools-mcp@latest
 
 echo "➕ Adding context7 MCP server..."
 "$CLAUDE_PATH" mcp add --transport http --scope user context7 https://mcp.context7.com/mcp
