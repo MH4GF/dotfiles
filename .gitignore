@@ -7,6 +7,9 @@
 # macOS
 .DS_Store
 
+# Playwright MCP screenshots
+.playwright-mcp/
+
 # Editor directories and files
 .idea
 .vscode
