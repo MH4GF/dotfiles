@@ -143,6 +143,7 @@
     ],
     "defaultMode": "acceptEdits"
   },
+  "model": "sonnet",
   "hooks": {
     "PostToolUse": [
       {
@@ -155,10 +156,25 @@
         ]
       }
     ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/hook_pre_commands.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
         "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/hook_stop_words.sh"
+          },
           {
             "type": "command",
             "command": "echo 'Done' | nohup say > /dev/null 2>&1 &"

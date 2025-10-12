@@ -27,6 +27,7 @@ mkdir -p ~/.claude
 ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands
 ln -sf $(realpath $(dirname ${0}))/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
+ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
 
 # Serena config
 mkdir -p ~/.serena
