@@ -51,6 +51,9 @@ alias ll='ls -laG'
 
 export AWS_SDK_LOAD_CONFIG=1
 
+# GitHub
+export GITHUB_TOKEN=$(gh auth token)
+
 # wakatime
 alias wakatime='docker run --rm -it mh4gf/wakatime-cli'
 
