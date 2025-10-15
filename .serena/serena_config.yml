@@ -1,2 +1,8 @@
 web_dashboard: false
-projects: []
+projects:
+- /Users/mh4gf/ghq/github.com/MH4GF/issync
+- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/building-schema-id
+- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/fix-pm-agent-reasoning-text
+- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/supabase-repository-schema-bench
+- /Users/mh4gf/ghq/github.com/route06/liam-internal
+- /Users/mh4gf/ghq/github.com/route06/liam-service-site
