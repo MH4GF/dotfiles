@@ -63,6 +63,7 @@
       "mcp__serena__find_symbol",
       "mcp__serena__find_referencing_symbols",
       "mcp__serena__onboarding",
+      "mcp__serena__think_about_collected_information",
       "Bash(npm -w apps/frontend run test:compile)",
       "Bash(npm -w apps/frontend run lint)",
       "Bash(npm -w apps/frontend run build)",
