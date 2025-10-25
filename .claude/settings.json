@@ -200,5 +200,8 @@
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
+  },
+  "enabledPlugins": {
+    "contradiction-tools@issync-plugins": true
   }
 }

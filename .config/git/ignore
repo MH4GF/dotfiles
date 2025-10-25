@@ -4,3 +4,5 @@
 .claude/settings.local.json
 .gitignore_local
 .issync/
+
+**/.claude/settings.local.json
