@@ -2,7 +2,6 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 brew 'git'
-brew 'tig'
 brew 'ghq'
 brew 'peco'
 brew 'jq'
