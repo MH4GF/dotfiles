@@ -1,12 +1,8 @@
 web_dashboard: false
 projects:
 - /Users/mh4gf/ghq/github.com/MH4GF/issync
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/building-schema-id
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/fix-pm-agent-reasoning-text
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/supabase-repository-schema-bench
-- /Users/mh4gf/ghq/github.com/route06/liam-internal
-- /Users/mh4gf/ghq/github.com/route06/liam-service-site
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app
+- /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-11
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-2
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-survey
 - /Users/mh4gf/ghq/github.com/thehearableapp/mapps-fs-parser

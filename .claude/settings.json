@@ -70,6 +70,19 @@
       "Bash(npm -w apps/frontend run storybook:build)",
       "Bash(npm -w apps/frontend run storybook)",
       "mcp__playwright__browser_evaluate",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__get_console_message",
+      "mcp__chrome-devtools__upload_file",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__get_network_request",
+      "mcp__notion__fetch",
       "Bash(npm -w apps/frontend run format:check)",
       "Bash(npm -w apps/frontend run format:fix)",
       "Bash(npm -w apps/frontend run test)"
@@ -147,7 +160,7 @@
     "ask": [
       "Bash(git commit:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "default"
   },
   "model": "sonnet",
   "hooks": {
