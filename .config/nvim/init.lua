@@ -46,6 +46,13 @@ vim.keymap.set("n", "<leader>cp", function()
   print("Copied: " .. path)
 end, { desc = "Copy relative file path" })
 
+vim.keymap.set("n", "<leader>cpa", function()
+  local path = vim.fn.expand("%:p")
+  path = extract_real_path(path)
+  vim.fn.setreg("+", path)
+  print("Copied: " .. path)
+end, { desc = "Copy absolute file path" })
+
 -- ファイルパスとコード選択範囲をコピー
 vim.keymap.set("v", "<leader>cc", function()
   local path = get_current_file_path()
