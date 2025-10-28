@@ -158,7 +158,8 @@
       "mcp__serena__insert_before_symbol"
     ],
     "ask": [
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(gh issue create:*)"
     ],
     "defaultMode": "default"
   },
