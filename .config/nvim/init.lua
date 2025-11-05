@@ -108,6 +108,13 @@ vim.keymap.set("v", "<leader>gh", function()
   end
 end, { desc = "Open file in GitHub with selected lines at current commit" })
 
+-- Finder でファイルを開く（macOS）
+vim.keymap.set("n", "<leader>fo", function()
+  local path = vim.fn.expand("%:p")
+  path = extract_real_path(path)
+  vim.cmd("!open -R " .. vim.fn.shellescape(path))
+  print("Opening in Finder: " .. path)
+end, { desc = "Open file in Finder" })
 
 -- 設定再読み込み（lazy.nvim対応）
 vim.keymap.set("n", "<leader>r", function()

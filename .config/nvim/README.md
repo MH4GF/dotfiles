@@ -25,6 +25,7 @@
 | `<leader>cp` | Normal | 相対ファイルパスをコピー |
 | `<leader>cpa` | Normal | 絶対ファイルパスをコピー |
 | `<leader>cc` | Visual | ファイルパスと選択コードをフォーマット付きでコピー |
+| `<leader>fo` | Normal | Finderでファイルを開く（選択状態で表示） |
 
 コピー形式: `@path/to/file.txt` + コードブロック
 
