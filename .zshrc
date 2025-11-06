@@ -135,8 +135,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # esac
 # # pnpm end
 
-alias claude="/Users/mh4gf/.claude/local/claude"
-
 # # pnpm
 # export PNPM_HOME="/Users/mh4gf/Library/pnpm"
 # case ":$PATH:" in
