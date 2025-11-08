@@ -1,19 +1,10 @@
 web_dashboard: false
 projects:
 - /Users/mh4gf/ghq/github.com/MH4GF/issync
-- /Users/mh4gf/ghq/github.com/MH4GF/issync-worktree/issync-list
-- /Users/mh4gf/ghq/github.com/liam-hq/liam
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/building-schema-id
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/devin-1761026246-fix-table-detail-focus-trap
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/fix-pm-agent-reasoning-text
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/react-db-agent
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/splinter
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/supabase-repository-schema-bench
-- /Users/mh4gf/ghq/github.com/liam-hq/liam-worktree/table-detail
-- /Users/mh4gf/ghq/github.com/route06/liam-internal
-- /Users/mh4gf/ghq/github.com/route06/liam-service-site
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app
-- /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-11
+- /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-12
+- /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-13
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/for-survey-import-2
+- /Users/mh4gf/ghq/github.com/thehearableapp/hearable-app-worktree/update-claude-md
 - /Users/mh4gf/ghq/github.com/thehearableapp/hearable-survey
 - /Users/mh4gf/ghq/github.com/thehearableapp/mapps-fs-parser
