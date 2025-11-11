@@ -4,5 +4,6 @@
 .claude/settings.local.json
 .gitignore_local
 .issync/
+.wtp.yml
 
 **/.claude/settings.local.json
