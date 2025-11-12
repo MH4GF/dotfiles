@@ -91,7 +91,9 @@
       "mcp__vercel__get_project",
       "mcp__vercel__list_deployments",
       "mcp__vercel__get_deployment_build_logs",
-      "mcp__vercel__get_deployment"
+      "mcp__vercel__get_deployment",
+      "mcp__vercel__get_access_to_vercel_url",
+      "mcp__vercel__search_documentation"
     ],
     "deny": [
       "Bash(rm -rf /)",
