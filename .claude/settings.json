@@ -86,7 +86,11 @@
       "Bash(npm -w apps/frontend run format:fix)",
       "Bash(npm -w apps/frontend run test)",
       "mcp__axiom__listDatasets",
-      "mcp__axiom__queryDataset"
+      "mcp__axiom__queryDataset",
+      "mcp__vercel__list_projects",
+      "mcp__vercel__list_deployments",
+      "mcp__vercel__get_deployment_build_logs",
+      "mcp__vercel__get_deployment"
     ],
     "deny": [
       "Bash(rm -rf /)",
