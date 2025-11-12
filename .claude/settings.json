@@ -84,7 +84,9 @@
       "mcp__notion__fetch",
       "Bash(npm -w apps/frontend run format:check)",
       "Bash(npm -w apps/frontend run format:fix)",
-      "Bash(npm -w apps/frontend run test)"
+      "Bash(npm -w apps/frontend run test)",
+      "mcp__axiom__listDatasets",
+      "mcp__axiom__queryDataset"
     ],
     "deny": [
       "Bash(rm -rf /)",
