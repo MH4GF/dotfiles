@@ -4,3 +4,7 @@
 - **Let code speak** - *If you need multi-paragraph comments, refactor until intent is obvious*
 - **Simple > Clever** - *Clear code beats clever code every time*
 - **Delete ruthlessly** - *Remove anything that doesn't add clear value*
+
+# Git Worktree Awareness
+
+- **Use current working directory** - All file operations must use `<env>Working directory</env>` as base path, never main branch directory
