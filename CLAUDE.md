@@ -34,7 +34,6 @@ Key files and directories:
 - `.gitconfig` - Git configuration with custom aliases
 - `.config/` - Application configurations (starship, karabiner, gh, git, mise, nvim)
 - `.claude/` - Claude-specific settings and commands
-- `.serena/` - Serena MCP server configuration
 
 ## Development Tools
 
@@ -70,10 +69,9 @@ The repository includes advanced git aliases for:
 
 ## MCP Server Configuration
 
-The repository includes setup for three MCP servers:
-1. **playwright** - Browser automation capabilities
+The repository includes setup for two MCP servers:
+1. **chrome-devtools** - Browser automation capabilities
 2. **context7** - Documentation retrieval
-3. **serena** - Code analysis and semantic search
 
 These are automatically configured via `setup_claude_mcp.sh`.
 

@@ -29,9 +29,5 @@ ln -sf $(realpath $(dirname ${0}))/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
 ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
 
-# Serena config
-mkdir -p ~/.serena
-ln -sf $(realpath $(dirname ${0}))/.serena/serena_config.yml ~/.serena/serena_config.yml
-
 # Claude MCP setup
 $(dirname ${0})/setup_claude_mcp.sh
