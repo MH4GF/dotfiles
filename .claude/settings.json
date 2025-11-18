@@ -114,6 +114,7 @@
       "Bash(docker system prune -af)",
       "Bash(npm publish:*)",
       "Bash(deno publish:*)",
+      "mcp__supabase__apply_migration",
       "Edit(/etc/**)",
       "Edit(/usr/**)",
       "Edit(/var/**)",
