@@ -84,8 +84,10 @@
       "mcp__vercel__get_deployment",
       "mcp__vercel__get_access_to_vercel_url",
       "mcp__vercel__search_documentation",
+      "mcp__vercel__list_teams",
       "mcp__supabase__execute_sql",
-      "mcp__supabase__list_tables"
+      "mcp__supabase__list_tables",
+      "mcp__supabase__search_docs"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -207,7 +209,7 @@
     "contradiction-tools@issync-plugins": true,
     "issync@issync-plugins": true
   },
-  "alwaysThinkingEnabled": false,
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
   }
