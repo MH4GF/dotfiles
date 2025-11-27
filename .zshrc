@@ -43,6 +43,13 @@ function g () {
 }
 compdef g=git
 
+# claude code - reset bracketed paste mode on exit
+# https://github.com/anthropics/claude-code/issues/3134
+claude() {
+    command claude "$@"
+    printf '\e[?2004l'
+}
+
 # docker
 alias dc='docker compose'
 
