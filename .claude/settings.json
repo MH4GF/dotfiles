@@ -87,7 +87,8 @@
       "mcp__vercel__list_teams",
       "mcp__supabase__execute_sql",
       "mcp__supabase__list_tables",
-      "mcp__supabase__search_docs"
+      "mcp__supabase__search_docs",
+      "SlashCommand(/issync:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
