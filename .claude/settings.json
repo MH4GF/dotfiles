@@ -70,6 +70,7 @@
       "mcp__chrome-devtools__evaluate_script",
       "mcp__chrome-devtools__list_network_requests",
       "mcp__chrome-devtools__get_network_request",
+      "mcp__chrome-devtools__list_pages",
       "mcp__notion__fetch",
       "Bash(npm -w apps/frontend run format:check)",
       "Bash(npm -w apps/frontend run format:fix)",
