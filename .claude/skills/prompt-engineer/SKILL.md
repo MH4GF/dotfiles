@@ -60,16 +60,32 @@ Claude Code向けプロンプト文書（CLAUDE.md、SKILL.md、カスタムス�
 
 ### 簡潔さが最優先
 
-Claudeは賢い。既知の事項を説明しない。各文が「これは本当に必要か？」を問う。
+コンテキストウィンドウは共有資源。すべてのトークンが他の情報と競合する。
+
+**前提**: Claudeは既に非常に賢い
+
+Claudeが既に知っていることは書かない。各情報に対して以下を問う：
+- 「Claudeは本当にこの説明が必要か？」
+- 「Claudeは既にこれを知っていると仮定できるか？」
+- 「この文はトークンコストに見合う価値があるか？」
 
 ```markdown
-# Bad
-Gitはバージョン管理システムです。コミットとはファイルの変更をリポジトリに保存することです。
-以下のコマンドを実行してコミットしてください。
+# Bad（約150トークン）
+PDF（Portable Document Format）はテキスト、画像、その他のコンテンツを含む
+一般的なファイル形式です。PDFからテキストを抽出するにはライブラリが必要です。
+pdfplumberは使いやすく、ほとんどのケースに対応できるのでお勧めです...
 
-# Good
-変更をコミット: `git commit -m "message"`
+# Good（約50トークン）
+PDFテキスト抽出にはpdfplumberを使用:
+
+\`\`\`python
+import pdfplumber
+with pdfplumber.open("file.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+\`\`\`
 ```
+
+Good版はClaudeがPDFとライブラリの概念を知っていることを前提としている。
 
 ### 具体性で曖昧さを排除
 
