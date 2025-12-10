@@ -163,7 +163,7 @@
       "Bash(gh issue create:*)"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
