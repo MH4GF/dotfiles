@@ -1,6 +1,6 @@
 ---
 name: prompt-engineer
-description: Claude Code向けプロンプト文書の作成・改善スキル。CLAUDE.md、SKILL.md、カスタムスラッシュコマンド（.claude/commands/*.md）のブラッシュアップに使用。「プロンプトを改善して」「CLAUDE.mdをレビューして」「スラッシュコマンドを作成して」などのリクエストで発動。
+description: Claude Code向けプロンプト文書の作成・改善スキル。CLAUDE.md、SKILL.md、カスタムスラッシュコマンド（.claude/commands/*.md）、プラグインコマンド（plugin/commands/*.md）のブラッシュアップに使用。「プロンプトを改善して」「CLAUDE.mdをレビューして」「スラッシュコマンドを作成して」「プラグインコマンドを改善して」などのリクエストで発動。
 ---
 
 # Prompt Engineer Skill
