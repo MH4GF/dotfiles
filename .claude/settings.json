@@ -90,7 +90,8 @@
       "mcp__supabase__list_tables",
       "mcp__supabase__search_docs",
       "SlashCommand(/issync:*)",
-      "mcp__notion__notion-fetch"
+      "mcp__notion__notion-fetch",
+      "Skill(prompt-engineer)"
     ],
     "deny": [
       "Bash(rm -rf /)",
