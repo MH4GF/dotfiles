@@ -1,6 +1,6 @@
 ---
 name: prompt-engineer
-description: Creates and improves Claude Code prompt documents (CLAUDE.md, SKILL.md, slash commands, plugin commands). Use when user needs help with prompt engineering, documentation setup, or command templates.
+description: MUST use when editing CLAUDE.md, SKILL.md, or slash commands. Applies prompt engineering best practices regardless of task size.
 ---
 
 # Prompt Engineer Skill
