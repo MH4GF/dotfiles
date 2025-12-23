@@ -121,8 +121,7 @@
       "Write(/etc/sudoers)"
     ],
     "ask": [
-      "Bash(git commit:*)",
-      "Bash(gh issue create:*)"
+      "Bash"
     ]
   },
   "model": "opus",
