@@ -9,3 +9,4 @@
 
 **/.claude/settings.local.json
 .mcp.json
+__pycache__/
