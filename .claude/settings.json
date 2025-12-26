@@ -124,9 +124,7 @@
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)"
     ],
-    "ask": [
-      "Bash"
-    ]
+    "ask": []
   },
   "model": "opus",
   "hooks": {
