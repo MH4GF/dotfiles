@@ -51,7 +51,11 @@
       "mcp__supabase__search_docs",
       "SlashCommand(/issync:*)",
       "mcp__notion__notion-fetch",
-      "Skill(prompt-engineer)"
+      "Skill(prompt-engineer)",
+      "Skill(skill-creator)",
+      "Skill(issync:plan)",
+      "WebFetch(domain:knip.dev)",
+      "Skill(difit)"
     ],
     "deny": [
       "Bash(rm -rf /)",
