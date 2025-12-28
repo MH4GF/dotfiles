@@ -55,7 +55,8 @@
       "Skill(skill-creator)",
       "Skill(issync:plan)",
       "WebFetch(domain:knip.dev)",
-      "Skill(difit)"
+      "Skill(difit)",
+      "WebSearch"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -172,7 +173,8 @@
   },
   "enabledPlugins": {
     "contradiction-tools@issync-plugins": true,
-    "issync@issync-plugins": true
+    "issync@issync-plugins": true,
+    "mh4gf@mh4gf-marketplace": true
   },
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
