@@ -138,6 +138,36 @@ vim.opt.rtp:prepend(lazypath)
 
 -- プラグインの設定
 require("lazy").setup({
+  -- Neo-tree（ファイルエクスプローラー）
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        window = {
+          width = 30,
+        },
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+          follow_current_file = {
+            enabled = true,
+          },
+        },
+      })
+      vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
+      vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>", { desc = "Focus Neo-tree" })
+    end,
+  },
+
   -- Telescope（ファジーファインダー）
   {
     "nvim-telescope/telescope.nvim",
