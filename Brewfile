@@ -1,7 +1,3 @@
-tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
-tap 'satococoa/tap'
-
 brew 'git'
 brew 'ghq'
 brew 'peco'
@@ -26,7 +22,7 @@ brew 'actionlint'
 brew 'duckdb'
 brew 'flock'
 brew 'mas'
-brew 'wtp'
+brew 'satococoa/tap/wtp'
 
 cask 'slack'
 cask 'karabiner-elements'
