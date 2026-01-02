@@ -35,9 +35,9 @@ echo "🔄 Updating Homebrew..."
 brew update
 brew upgrade
 
-# Get Brewfile from Gist
-echo "📥 Fetching Brewfile from Gist..."
-curl -fsSL https://gist.githubusercontent.com/MH4GF/c945f8e7654dcf1db7a2928885068167/raw > ~/.Brewfile
+# Get Brewfile from repository
+echo "📥 Fetching Brewfile..."
+curl -fsSL https://raw.githubusercontent.com/MH4GF/dotfiles/master/Brewfile > ~/.Brewfile
 
 # Install packages from Brewfile
 echo "📦 Installing packages from Brewfile..."
