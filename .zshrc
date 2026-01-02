@@ -33,6 +33,16 @@ setopt hist_no_store         # historyコマンドは記録しない
 alias gp='git push -u origin $(git branch --show-current)'
 alias gpf='git push -u --force-with-lease origin $(git branch --show-current)'
 
+# Git commit lock wrapper (for multi-session safety)
+git() {
+    local GITDIR=$(command git rev-parse --show-toplevel 2>/dev/null)/.git
+    if [[ -d "$GITDIR" ]]; then
+        flock "$GITDIR" command git "$@"
+    else
+        command git "$@"
+    fi
+}
+
 function g () {
     if [[ $# > 0 ]]
     then
