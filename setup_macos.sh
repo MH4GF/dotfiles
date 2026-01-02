@@ -62,7 +62,7 @@ ghq get --update git@github.com:MH4GF/dotfiles.git
 
 # Setup mise tools
 echo "🛠 Installing development tools with mise..."
-if [[ -f ~/ghq/github.com/MH4GF/dotfiles/mise.toml ]]; then
+if [[ -f ~/.config/mise/config.toml ]]; then
     mise install
 fi
 
