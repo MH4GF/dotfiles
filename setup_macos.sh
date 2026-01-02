@@ -61,6 +61,10 @@ if [[ -f ~/ghq/github.com/MH4GF/dotfiles/mise.toml ]]; then
     mise install
 fi
 
+# Install global npm packages
+echo "📦 Installing global npm packages..."
+npm install -g @mh4gf/issync @openai/codex
+
 # macOS System Preferences
 echo "⚙️  Configuring macOS preferences..."
 
