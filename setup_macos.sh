@@ -2,6 +2,11 @@
 #
 # macOS セットアップスクリプト
 #
+# クリーンインストール前の準備:
+#   - AWS設定を1Passwordにバックアップ:
+#     cat ~/.aws/credentials | pbcopy → 1Passwordの該当項目を更新
+#     cat ~/.aws/config | pbcopy → 1Passwordの該当項目を更新
+#
 # 使い方（クリーンインストール後）:
 #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/MH4GF/dotfiles/master/setup_macos.sh)"
 
