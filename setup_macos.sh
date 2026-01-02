@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# macOS セットアップスクリプト
+#
+# 使い方（クリーンインストール後）:
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/MH4GF/dotfiles/master/setup_macos.sh)"
 
 set -e
 
