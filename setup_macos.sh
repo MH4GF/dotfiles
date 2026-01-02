@@ -68,7 +68,7 @@ fi
 
 # Install global npm packages
 echo "📦 Installing global npm packages..."
-npm install -g @mh4gf/issync @openai/codex
+mise exec -- npm install -g @mh4gf/issync @openai/codex
 
 # macOS System Preferences
 echo "⚙️  Configuring macOS preferences..."
