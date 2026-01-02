@@ -56,6 +56,7 @@ if command -v op &> /dev/null; then
 fi
 
 # Clone and setup dotfiles
+# Note: SSH keys are managed by 1Password. After signing in above, SSH Agent is available.
 echo "📥 Setting up dotfiles..."
 ghq get --update git@github.com:MH4GF/dotfiles.git
 ~/ghq/github.com/MH4GF/dotfiles/setup.sh
