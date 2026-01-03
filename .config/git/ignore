@@ -10,3 +10,4 @@
 **/.claude/settings.local.json
 .mcp.json
 __pycache__/
+lefthook-local.yml
