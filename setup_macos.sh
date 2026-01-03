@@ -69,6 +69,7 @@ ghq get --update git@github.com:MH4GF/dotfiles.git
 # mise開発ツールのセットアップ
 echo "🛠 Installing development tools with mise..."
 if [[ -f ~/.config/mise/config.toml ]]; then
+    mise trust ~/.config/mise/config.toml
     mise install
 fi
 
@@ -144,4 +145,6 @@ echo "   gpg --full-generate-key"
 echo "   gpg --list-secret-keys --keyid-format=long"
 echo "   gpg --armor --export <KEY_ID> | pbcopy"
 echo "   # Add to ~/.gitconfig.local: signingkey = <KEY_ID>"
-echo "4. Restart your computer for all changes to take effect"
+echo "4. Add home directory to Finder sidebar:"
+echo "   Finder → Settings (Cmd+,) → Sidebar → Check 'Home'"
+echo "5. Restart your computer for all changes to take effect"
