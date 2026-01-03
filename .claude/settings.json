@@ -56,7 +56,9 @@
       "Skill(issync:plan)",
       "WebFetch(domain:knip.dev)",
       "Skill(difit)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(gh pr view:*)",
+      "Bash(gh run view:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
