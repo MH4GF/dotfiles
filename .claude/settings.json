@@ -60,7 +60,10 @@
       "Bash(gh pr view:*)",
       "Bash(gh run view:*)",
       "Bash(git fetch:*)",
-      "Bash(gh pr list:*)"
+      "Bash(gh pr list:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(git push:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
