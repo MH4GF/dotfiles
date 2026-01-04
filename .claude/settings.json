@@ -148,6 +148,10 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.command // empty' | grep -qE 'git add (-A|--all|[.]$|[.] )' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"一括追加は禁止です。ファイルを個別に確認し、必要なものだけ追加してください\"}}' || true"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command // empty' | grep -qE -- '--no-verify' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"--no-verify でフックをスキップしようとしています\"}}' || true"
           }
         ]
       }
