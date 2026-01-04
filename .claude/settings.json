@@ -63,7 +63,8 @@
       "Bash(gh pr list:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(pnpm install:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
