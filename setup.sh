@@ -22,6 +22,9 @@ ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
 ln -sf $(realpath $(dirname ${0}))/.gitconfig ~/.gitconfig
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
 
+mkdir -p ~/.config/ghostty/
+ln -sf $(realpath $(dirname ${0}))/.config/ghostty/config ~/.config/ghostty/config
+
 # Claude settings
 mkdir -p ~/.claude
 ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands
