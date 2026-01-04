@@ -144,6 +144,10 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.command // empty' | grep -qE 'git push.*(-f|--force)' && { echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Force push detected\"}}'; exit 0; } || exit 0"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command // empty' | grep -qE 'git add (-A|--all|[.]$|[.] )' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"一括追加は禁止です。ファイルを個別に確認し、必要なものだけ追加してください\"}}' || true"
           }
         ]
       }
