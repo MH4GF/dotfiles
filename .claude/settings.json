@@ -58,7 +58,9 @@
       "Skill(difit)",
       "WebSearch",
       "Bash(gh pr view:*)",
-      "Bash(gh run view:*)"
+      "Bash(gh run view:*)",
+      "Bash(git fetch:*)",
+      "Bash(gh pr list:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
