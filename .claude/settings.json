@@ -62,6 +62,7 @@
       "Bash(gh run view:*)",
       "Bash(git fetch:*)",
       "Bash(gh pr list:*)",
+      "Bash(gh issue view:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(git push:*)",
