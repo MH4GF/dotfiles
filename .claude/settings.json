@@ -63,10 +63,15 @@
       "Bash(git fetch:*)",
       "Bash(gh pr list:*)",
       "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh search:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(git push:*)",
-      "Bash(pnpm install:*)"
+      "Bash(pnpm install:*)",
+      "Bash(issync:*)",
+      "Bash(bun install:*)",
+      "Bash(bun run:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
