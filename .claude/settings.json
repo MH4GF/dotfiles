@@ -59,6 +59,7 @@
       "Skill(difit)",
       "WebSearch",
       "Bash(gh pr view:*)",
+      "Bash(gh pr checks:*)",
       "Bash(gh run view:*)",
       "Bash(git fetch:*)",
       "Bash(gh pr list:*)",
