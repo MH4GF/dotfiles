@@ -72,7 +72,9 @@
       "Bash(pnpm install:*)",
       "Bash(issync:*)",
       "Bash(bun install:*)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "mcp__linear__get_issue",
+      "Grep"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -194,7 +196,8 @@
   "enabledPlugins": {
     "contradiction-tools@issync-plugins": true,
     "issync@issync-plugins": true,
-    "mh4gf@mh4gf-marketplace": true
+    "mh4gf@mh4gf-marketplace": true,
+    "dig@kuu-marketplace": true
   },
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
