@@ -74,7 +74,8 @@
       "Bash(bun install:*)",
       "Bash(bun run:*)",
       "mcp__linear__get_issue",
-      "Grep"
+      "Grep",
+      "Bash(grep:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
