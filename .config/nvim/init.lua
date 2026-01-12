@@ -199,11 +199,12 @@ require("lazy").setup({
 
   -- Git integration
   {
-    "tpope/vim-fugitive",
-    config = function()
-      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
-      vim.keymap.set("n", "<leader>gd", ":Git diff --staged<CR>", { desc = "Git diff staged" })
-    end,
+    "kdheepak/lazygit.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "LazyGit" },
+    keys = {
+      { "<leader>gs", "<cmd>LazyGit<CR>", desc = "LazyGit" },
+    },
   },
 
   -- LSP Configuration

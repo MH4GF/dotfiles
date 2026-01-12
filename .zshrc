@@ -88,7 +88,7 @@ alias nf="nvim +\"lua vim.defer_fn(function() require('telescope.builtin').find_
 alias ng="nvim +\"lua vim.defer_fn(function() require('telescope.builtin').live_grep() end, 100)\""
 
 # neovim + git
-alias nvg="nvim +'Git'"
+alias nvg="nvim +'LazyGit'"
 
 # cpp
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
