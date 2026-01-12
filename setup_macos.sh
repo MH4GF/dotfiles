@@ -129,6 +129,14 @@ defaults write com.apple.dock showhidden -bool true
 # DashboardをSpaceとして表示しない
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
+# 電源管理設定
+# 電源接続時: スリープしない
+sudo pmset -c displaysleep 0
+sudo pmset -c sleep 0
+# バッテリー時: 15分でスリープ
+sudo pmset -b displaysleep 15
+sudo pmset -b sleep 15
+
 # 影響を受けるアプリケーションを再起動
 echo "🔄 Restarting affected applications..."
 killall Finder || true

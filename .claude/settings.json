@@ -69,6 +69,7 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(git push:*)",
+      "Bash(git worktree list:*)",
       "Bash(pnpm install:*)",
       "Bash(issync:*)",
       "Bash(bun install:*)",
@@ -198,8 +199,12 @@
     "contradiction-tools@issync-plugins": true,
     "issync@issync-plugins": true,
     "mh4gf@mh4gf-marketplace": true,
-    "dig@kuu-marketplace": true
+    "dig@kuu-marketplace": true,
+    "commit-commands@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
   },
+  "language": "日本語",
   "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
