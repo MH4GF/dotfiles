@@ -31,7 +31,7 @@ ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands
 ln -sf $(realpath $(dirname ${0}))/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
 ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
-ln -sf $(realpath $(dirname ${0}))/.claude/skills ~/.claude/skills
+ln -sfn $(realpath $(dirname ${0}))/.claude/skills ~/.claude/skills
 
 # Claude MCP setup
 $(dirname ${0})/setup_claude_mcp.sh

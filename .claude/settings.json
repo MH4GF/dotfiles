@@ -68,7 +68,6 @@
       "Bash(gh search:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
-      "Bash(git push:*)",
       "Bash(git worktree list:*)",
       "Bash(pnpm install:*)",
       "Bash(issync:*)",
@@ -76,7 +75,8 @@
       "Bash(bun run:*)",
       "mcp__linear__get_issue",
       "Grep",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(go test:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -200,7 +200,6 @@
     "issync@issync-plugins": true,
     "mh4gf@mh4gf-marketplace": true,
     "dig@kuu-marketplace": true,
-    "commit-commands@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true
   },
