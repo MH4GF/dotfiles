@@ -201,7 +201,9 @@
     "mh4gf@mh4gf-marketplace": true,
     "dig@kuu-marketplace": true,
     "ralph-loop@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+    "code-simplifier@claude-plugins-official": true,
+    "state-machine@mh4gf-marketplace": true,
+    "plan-tools@mh4gf-marketplace": true
   },
   "language": "日本語",
   "alwaysThinkingEnabled": true,

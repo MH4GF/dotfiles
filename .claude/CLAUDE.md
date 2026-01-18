@@ -10,3 +10,13 @@
 - **Use current working directory** - All file operations must use `<env>Working directory</env>` as base path, never main branch directory
 - **Commit per task** - Commit when each logical task completes; include context and reasoning in commit message
 - **No "why" in code comments** - History lives in commits, not in code
+
+# Plan Mode
+
+Every plan MUST include:
+- State machine diagram
+- E2E verification steps (local env, UI-based - not API)
+- Test code requirements
+
+Before ExitPlanMode: `/plan-tools:state-machine`
+After accepted: `/plan-tools:pbcopy`
