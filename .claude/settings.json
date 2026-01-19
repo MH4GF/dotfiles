@@ -203,7 +203,8 @@
     "ralph-loop@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "state-machine@mh4gf-marketplace": true,
-    "plan-tools@mh4gf-marketplace": true
+    "plan-tools@mh4gf-marketplace": true,
+    "qa@mh4gf-marketplace": true
   },
   "language": "日本語",
   "alwaysThinkingEnabled": true,
