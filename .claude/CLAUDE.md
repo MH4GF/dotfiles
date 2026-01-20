@@ -19,4 +19,3 @@ Every plan MUST include:
 - Test code requirements
 
 Before ExitPlanMode: `/plan-tools:state-machine`
-After accepted: `/plan-tools:pbcopy`
