@@ -11,3 +11,4 @@
 .mcp.json
 __pycache__/
 lefthook-local.yml
+compose.override.yml
