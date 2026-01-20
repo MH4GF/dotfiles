@@ -12,3 +12,4 @@
 __pycache__/
 lefthook-local.yml
 compose.override.yml
+compose.override.yaml
