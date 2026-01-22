@@ -25,6 +25,9 @@ ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/confi
 mkdir -p ~/.config/ghostty/
 ln -sf $(realpath $(dirname ${0}))/.config/ghostty/config ~/.config/ghostty/config
 
+mkdir -p ~/.config/wezterm/
+ln -sf $(realpath $(dirname ${0}))/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+
 # Claude settings
 mkdir -p ~/.claude
 ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands

@@ -209,3 +209,6 @@ pr_auto_ready() {
 export PATH='/Users/mh4gf/.duckdb/cli/latest':$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# wezterm
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
