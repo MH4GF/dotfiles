@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "plansDirectory": ".claude/plans",
   "env": {
     "BASH_DEFAULT_TIMEOUT_MS": "1200000",
     "BASH_MAX_TIMEOUT_MS": "1200000",
