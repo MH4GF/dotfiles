@@ -185,7 +185,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -message 'Done' -title 'Claude Code' -activate com.github.wez.wezterm"
+            "command": "terminal-notifier -message 'Done' -title 'Claude Code' -activate com.googlecode.iterm2"
           }
         ]
       }
@@ -196,7 +196,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -message 'Approval needed' -title 'Claude Code' -activate com.github.wez.wezterm"
+            "command": "terminal-notifier -message 'Approval needed' -title 'Claude Code' -activate com.googlecode.iterm2"
           }
         ]
       }
