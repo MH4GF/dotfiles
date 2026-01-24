@@ -28,6 +28,9 @@ ln -sf $(realpath $(dirname ${0}))/.config/ghostty/config ~/.config/ghostty/conf
 mkdir -p ~/.config/wezterm/
 ln -sf $(realpath $(dirname ${0}))/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
+mkdir -p ~/.config/iterm2/
+ln -sf $(realpath $(dirname ${0}))/.config/iterm2/com.googlecode.iterm2.plist ~/.config/iterm2/com.googlecode.iterm2.plist
+
 # Claude settings
 mkdir -p ~/.claude
 ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands
