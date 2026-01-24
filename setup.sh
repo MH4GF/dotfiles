@@ -22,12 +22,6 @@ ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
 ln -sf $(realpath $(dirname ${0}))/.gitconfig ~/.gitconfig
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
 
-mkdir -p ~/.config/ghostty/
-ln -sf $(realpath $(dirname ${0}))/.config/ghostty/config ~/.config/ghostty/config
-
-mkdir -p ~/.config/wezterm/
-ln -sf $(realpath $(dirname ${0}))/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
-
 mkdir -p ~/.config/iterm2/
 ln -sf $(realpath $(dirname ${0}))/.config/iterm2/com.googlecode.iterm2.plist ~/.config/iterm2/com.googlecode.iterm2.plist
 
