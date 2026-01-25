@@ -224,7 +224,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -message 'Done' -title 'Claude Code' -activate com.googlecode.iterm2"
+            "command": "osascript -e 'tell application \"iTerm2\" to activate'"
           }
         ]
       }
@@ -235,7 +235,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -message 'Approval needed' -title 'Claude Code' -activate com.googlecode.iterm2"
+            "command": "osascript -e 'tell application \"iTerm2\" to activate'"
           }
         ]
       }
