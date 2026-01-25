@@ -14,7 +14,6 @@
 # Plan Mode
 
 Every plan MUST include:
-- State machine diagram
 - E2E verification steps (local env, UI-based - not API)
 - Test code requirements
 
