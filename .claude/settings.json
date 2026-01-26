@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "plansDirectory": ".claude/plans",
   "env": {
     "BASH_DEFAULT_TIMEOUT_MS": "1200000",
     "BASH_MAX_TIMEOUT_MS": "1200000",
@@ -103,7 +102,6 @@
       "Bash(git add:*)",
       "Bash(gh run watch:*)",
       "Bash(gh run list:*)",
-      "Bash(gh api:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh cache list:*)",
       "Bash(codex review:*)",
@@ -203,6 +201,10 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.command // empty' | grep -qE -- '--no-verify' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"--no-verify でフックをスキップしようとしています\"}}' || true"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command // empty' | grep -qE 'git\\s+(-[a-zA-Z]+\\s+)*-C\\s' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"git -C は禁止です。cd path && git ... の形式で実行してください\"}}' || true"
           }
         ]
       }
@@ -259,9 +261,8 @@
   "enabledPlugins": {
     "contradiction-tools@issync-plugins": true,
     "issync@issync-plugins": true,
-    "mh4gf@mh4gf-marketplace": true,
     "dig@kuu-marketplace": true,
-    "ralph-loop@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": false,
     "code-simplifier@claude-plugins-official": true,
     "state-machine@mh4gf-marketplace": true,
     "plan-tools@mh4gf-marketplace": true,
@@ -270,6 +271,7 @@
   },
   "language": "日本語",
   "alwaysThinkingEnabled": true,
+  "plansDirectory": ".claude/plans",
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
   }
