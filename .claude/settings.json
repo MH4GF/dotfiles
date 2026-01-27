@@ -113,7 +113,8 @@
       "Skill(issync:implement)",
       "Skill(issync:understand-progress)",
       "Skill(issync:create-sub-issue)",
-      "Skill(plan-tools:state-machine)"
+      "Skill(plan-tools:state-machine)",
+      "Read(~/.claude/CLAUDE.md)"
     ],
     "deny": [
       "Bash(rm -rf /)",
