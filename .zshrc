@@ -93,6 +93,9 @@ export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
 # GPG key
 export GPG_TTY=$(tty)
 
+# Editor
+export EDITOR=nvim
+
 eval "$(direnv hook zsh)"
 
 # Added by Zinit's installer
