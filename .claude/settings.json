@@ -299,7 +299,7 @@
   },
   "enabledPlugins": {
     "contradiction-tools@issync-plugins": true,
-    "issync@issync-plugins": true,
+    "issync@issync-plugins": false,
     "dig@kuu-marketplace": true,
     "ralph-loop@claude-plugins-official": false,
     "code-simplifier@claude-plugins-official": true,
