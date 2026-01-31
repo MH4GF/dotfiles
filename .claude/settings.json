@@ -97,7 +97,6 @@
       "Bash(jq:*)",
       "Bash(lsof:*)",
       "Bash(git show:*)",
-      "Bash(git checkout:*)",
       "Bash(git rebase:*)",
       "Bash(git add:*)",
       "Bash(gh run watch:*)",
