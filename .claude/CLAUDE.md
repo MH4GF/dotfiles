@@ -11,6 +11,11 @@
 - **Commit per task** - Commit when each logical task completes; include context and reasoning in commit message
 - **No "why" in code comments** - History lives in commits, not in code
 
+# Research & Reporting
+
+- **Reproducible evidence** - All findings MUST include steps another user can independently verify (e.g., exact CLI commands executed and their output)
+- **Executable commands only** - Commands in reports MUST be copy-paste runnable, never abbreviated pseudocode
+
 # Plan Mode
 
 Every plan MUST include:
