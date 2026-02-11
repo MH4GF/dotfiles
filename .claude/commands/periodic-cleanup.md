@@ -16,4 +16,4 @@ ghq list | grep -v worktrees
 
 ### 2. settings.local.json 統合
 
-同じリポジトリ一覧から `.claude/settings.local.json` を探し、グローバル設定 `/Users/mh4gf/ghq/github.com/MH4GF/dotfiles/.claude/settings.json` に未登録の許可設定を追加。
+`/collect-permissions` コマンドを実行。
