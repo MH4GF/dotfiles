@@ -292,7 +292,9 @@
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)"
     ],
-    "ask": []
+    "ask": [
+      "Bash(gh api:*)"
+    ]
   },
   "model": "opus",
   "hooks": {
