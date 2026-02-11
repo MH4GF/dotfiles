@@ -9,11 +9,7 @@ allowed-tools: Bash(bash *collect_permissions.sh*)
 bash ~/.claude/skills/collect-permissions/scripts/collect_permissions.sh
 ```
 
-スクリプト出力はフィルタ適用済みの候補リスト。以下の手順で処理:
-
-1. 候補をカテゴリ別に整理して表示
-2. ユーザー確認後、承認されたエントリを `~/.claude/settings.json` の `permissions.allow` に追加
-3. サマリ報告
+スクリプト出力はフィルタ適用済みの候補リスト。review_guidelines に基づき判断した上で、`~/.claude/settings.json` の `permissions.allow` に直接追加する。
 
 <review_guidelines>
 候補表示時に以下を判断し、除外を提案すること:
