@@ -20,6 +20,7 @@ ln -sf $(realpath $(dirname ${0}))/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf $(realpath $(dirname ${0}))/.zshrc ~/.zshrc
 ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
 ln -sf $(realpath $(dirname ${0}))/.gitconfig ~/.gitconfig
+ln -sf $(realpath $(dirname ${0}))/.tmux.conf ~/.tmux.conf
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
 
 mkdir -p ~/.config/iterm2/
