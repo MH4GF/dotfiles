@@ -24,6 +24,8 @@
 	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>DF112724-325A-4927-803D-29C2DB6D6376</string>
 	<key>GlobalKeyMap</key>
@@ -1168,6 +1170,8 @@
 			<string>/Users/mh4gf</string>
 		</dict>
 	</array>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
