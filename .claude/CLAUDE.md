@@ -10,6 +10,7 @@
 - **Use current working directory** - All file operations must use `<env>Working directory</env>` as base path, never main branch directory
 - **Commit per task** - Commit when each logical task completes; include context and reasoning in commit message
 - **No "why" in code comments** - History lives in commits, not in code
+- **Describe the change, not the trigger** - Commit messages MUST state what changed, never the process that caused it (e.g., "address review feedback" is banned—describe the actual change instead)
 
 # Research & Reporting
 
