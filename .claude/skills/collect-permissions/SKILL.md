@@ -1,6 +1,6 @@
 ---
 description: 全リポジトリの settings.local.json から許可設定を収集しグローバル設定に統合
-allowed-tools: Bash(bash *collect_permissions.sh*)
+allowed-tools: Bash(bash *collect_permissions.sh*), Read(~/.claude/settings.json)
 ---
 
 スクリプトを実行し、グローバル設定（`~/.claude/settings.json`）に未登録の候補を一覧表示する。
