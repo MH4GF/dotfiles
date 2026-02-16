@@ -23,6 +23,7 @@ brew 'actionlint'
 brew 'duckdb'
 brew 'flock'
 brew 'mas'
+brew 'terminal-notifier'
 brew 'satococoa/tap/wtp'
 
 cask 'slack'

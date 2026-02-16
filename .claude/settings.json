@@ -420,7 +420,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'tell application \"iTerm2\" to activate'"
+            "command": "jq -n --arg cwd \"$PWD\" '{notification_type:\"stop\",cwd:$cwd}' | ~/.claude/hooks/claude-notification.sh"
           }
         ]
       }
@@ -431,7 +431,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'tell application \"iTerm2\" to activate'"
+            "command": "~/.claude/hooks/claude-notification.sh"
           }
         ]
       }
