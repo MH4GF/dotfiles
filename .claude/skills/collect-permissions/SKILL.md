@@ -17,3 +17,5 @@ bash ~/.claude/skills/collect-permissions/scripts/collect_permissions.sh
 - `gog`: query系（`gog auth status`等）は許可、操作系（`gog gmail thread modify`等）は除外を提案
 - プロジェクト固有の Skill: グローバルに追加すべきか確認
 </review_guidelines>
+
+設定追加後、`/commit` でdotfilesリポジトリにコミットする。
