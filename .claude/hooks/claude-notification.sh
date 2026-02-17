@@ -17,12 +17,8 @@ case "$notification_type" in
     title="Claude Code - Question"
     message="[$project_name] 質問があります"
     ;;
-  idle_prompt)
+  idle_prompt|stop)
     exit 0
-    ;;
-  stop)
-    title="Claude Code - Done"
-    message="[$project_name] 処理が完了しました"
     ;;
   *)
     title="Claude Code"
