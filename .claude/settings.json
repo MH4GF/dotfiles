@@ -321,7 +321,9 @@
       "WebFetch(domain:sentry.io)",
       "mcp__chrome-devtools__drag",
       "mcp__slack__slack_list_channels",
-      "Bash(bun:*)"
+      "Bash(bun:*)",
+      "Bash(defaults read:*)",
+      "Bash(npx renovate-config-validator:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
