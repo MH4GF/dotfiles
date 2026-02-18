@@ -323,7 +323,16 @@
       "mcp__slack__slack_list_channels",
       "Bash(bun:*)",
       "Bash(defaults read:*)",
-      "Bash(npx renovate-config-validator:*)"
+      "Bash(npx renovate-config-validator:*)",
+      "Bash(gcloud --version:*)",
+      "Bash(gog calendar list:*)",
+      "Bash(gog tasks list:*)",
+      "Bash(gog gmail thread:*)",
+      "Bash(gog gmail attachment:*)",
+      "Bash(tmux new-window:*)",
+      "Bash(tmux send-keys:*)",
+      "Bash(wtp add:*)",
+      "Skill(tmux-task)"
     ],
     "deny": [
       "Bash(rm -rf /)",
