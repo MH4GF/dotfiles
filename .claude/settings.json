@@ -332,7 +332,12 @@
       "Bash(tmux new-window:*)",
       "Bash(tmux send-keys:*)",
       "Bash(wtp add:*)",
-      "Skill(tmux-task)"
+      "Skill(tmux-task)",
+      "Bash(aws ecs list-clusters:*)",
+      "Bash(gog calendar events:*)",
+      "Bash(npm view:*)",
+      "WebFetch(domain:www.dbcost.com)",
+      "Skill(report-task-manager)"
     ],
     "deny": [
       "Bash(rm -rf /)",
