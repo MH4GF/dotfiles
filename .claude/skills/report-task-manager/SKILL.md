@@ -18,8 +18,8 @@ IMPORTANT: 情報取得と送信は**独立したBash呼び出し**で行う。1
 IMPORTANT: `tmux send-keys` でテキストとEnterは必ず分離する。同時に送るとClaude Codeの入力欄でEnterが認識されないことがある。
 
 ```bash
-# (1) ウィンドウ名取得
-tmux display-message -p '#{window_name}'
+# (1) ウィンドウ名取得（TMUX_PANEで自ペインを指定し、アクティブクライアント依存を回避）
+tmux display-message -t "$TMUX_PANE" -p '#{window_name}'
 
 # (2) テキスト送信（<WINDOW>を上の結果で置換）
 tmux send-keys -t main:works '[<WINDOW> pane:main:<WINDOW>.0] <報告文>'
