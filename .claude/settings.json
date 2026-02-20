@@ -337,7 +337,20 @@
       "Bash(gog calendar events:*)",
       "Bash(npm view:*)",
       "WebFetch(domain:www.dbcost.com)",
-      "Skill(report-task-manager)"
+      "Skill(report-task-manager)",
+      "Bash(alias:*)",
+      "Bash(claude mcp:*)",
+      "Bash(gcloud run jobs executions describe:*)",
+      "Bash(gcloud run jobs executions list:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm codegen:graphql:*)",
+      "Bash(terraform validate:*)",
+      "Bash(tmux display-message:*)",
+      "Bash(tmux rename-window:*)",
+      "Bash(wtp ls:*)",
+      "Skill(github-pr)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:registry.terraform.io)"
     ],
     "deny": [
       "Bash(rm -rf /)",
