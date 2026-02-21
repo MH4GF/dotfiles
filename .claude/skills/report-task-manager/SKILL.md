@@ -9,7 +9,7 @@ allowed-tools: Bash(*/send-report.sh *)
 
 ## 手順
 
-1. `$ARGUMENTS` と現在の作業コンテキストから、task_statusとmessageを決定
+1. task_statusとmessageを決定（下記「推論ルール」参照）
 2. `scripts/send-report.sh` を実行
 
 ```bash
@@ -28,4 +28,15 @@ allowed-tools: Bash(*/send-report.sh *)
 - **URL**: PR URL等があれば付与
 - **次のアクション**: タスク管理者に判断を求める場合は明記
 
-IMPORTANT: `$ARGUMENTS` が空の場合は `AskUserQuestion` で報告内容を確認する。
+## 推論ルール
+
+`$ARGUMENTS` が指定されている場合はその内容に従う。
+
+`$ARGUMENTS` が空の場合は、セッションの会話コンテキストから自動推論する:
+
+1. 直近の作業内容・実行結果・発生したエラーを分析
+2. task_statusを判定:
+   - 依頼されたタスクが完了している → `done`
+   - 未解決のエラー・判断待ちがある → `blocked`
+   - 作業途中で中間報告が必要 → `wip`
+3. messageを生成（要点・URL・次のアクションを含める）
