@@ -350,7 +350,19 @@
       "Bash(wtp ls:*)",
       "Skill(github-pr)",
       "WebFetch(domain:medium.com)",
-      "WebFetch(domain:registry.terraform.io)"
+      "WebFetch(domain:registry.terraform.io)",
+      "Bash(gcloud run services describe:*)",
+      "Bash(gcloud run services list:*)",
+      "Bash(gog calendar update --help:*)",
+      "Bash(~/.claude/skills/github-pr/gh-unresolved-threads:*)",
+      "mcp__chrome-devtools__emulate",
+      "mcp__chrome-devtools__resize_page",
+      "mcp__linear__list_issue_labels",
+      "mcp__linear__list_teams",
+      "mcp__sentry__find_projects",
+      "mcp__sentry__get_trace_details",
+      "mcp__sentry__search_events",
+      "mcp__sentry__search_issue_events"
     ],
     "deny": [
       "Bash(rm -rf /)",
