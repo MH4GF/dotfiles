@@ -366,7 +366,17 @@
       "mcp__sentry__find_projects",
       "mcp__sentry__get_trace_details",
       "mcp__sentry__search_events",
-      "mcp__sentry__search_issue_events"
+      "mcp__sentry__search_issue_events",
+      "Bash(.claude/tools/notify-watch/notify-watch:*)",
+      "Bash(aws chatbot describe-slack-workspaces:*)",
+      "Bash(gh help:*)",
+      "Bash(gh secret list:*)",
+      "Bash(gh status:*)",
+      "Bash(mise use:*)",
+      "Bash(terraform init:*)",
+      "Bash(~/.claude/skills/report-task-manager/scripts/send-report.sh:*)",
+      "mcp__chrome-devtools__fill_form",
+      "mcp__sentry__get_issue_tag_values"
     ],
     "deny": [
       "Bash(rm -rf /)",
