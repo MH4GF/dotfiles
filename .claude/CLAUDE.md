@@ -12,6 +12,10 @@
 - **No "why" in code comments** - History lives in commits, not in code
 - **Describe the change, not the trigger** - Commit messages MUST state what changed, never the process that caused it (e.g., "address review feedback" is banned—describe the actual change instead)
 
+# GitHub CLI
+
+- **Prefer dedicated subcommands** - Use `gh pr view`, `gh issue list`, `gh search prs` etc. over `gh api`. Resort to `gh api` only when dedicated subcommands cannot retrieve the needed information.
+
 # Research & Reporting
 
 - **Reproducible evidence** - All findings MUST include steps another user can independently verify (e.g., exact CLI commands executed and their output)
