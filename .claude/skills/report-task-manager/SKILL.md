@@ -5,7 +5,7 @@ allowed-tools: Bash(*/send-report.sh *)
 
 # report-task-manager
 
-タスク管理者にJSONファイル経由で報告を送信する。報告は `~/.claude/report-queue/pending/` に書き込まれ、タスク管理者のStop hookが自動検知する。
+タスク管理者にwork-queue (wq) 経由で報告を送信する。報告は `wq add` でSQLiteに書き込まれ、タスク管理者のStop hookが自動検知する。
 
 ## 手順
 

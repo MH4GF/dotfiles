@@ -374,6 +374,7 @@
       "Bash(gh status:*)",
       "Bash(mise use:*)",
       "Bash(terraform init:*)",
+      "Bash(wq:*)",
       "Bash(~/.claude/skills/report-task-manager/scripts/send-report.sh:*)",
       "mcp__chrome-devtools__fill_form",
       "mcp__sentry__get_issue_tag_values"
