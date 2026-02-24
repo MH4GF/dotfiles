@@ -8,9 +8,6 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "additionalDirectories": [
-      "/tmp"
-    ],
     "allow": [
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
@@ -219,7 +216,6 @@
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:gitbook.com)",
       "mcp__chrome-devtools__handle_dialog",
-      "mcp__chrome-devtools__press_key",
       "mcp__qmd__search",
       "mcp__qmd__status",
       "mcp__qmd__vsearch",
@@ -450,6 +446,9 @@
       "Bash(gh api:*)",
       "Bash(gh pr comment:*)",
       "Bash(gh pr merge:*)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   },
   "model": "opus",
@@ -517,6 +516,26 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.plan // empty' | pbcopy"
+          }
+        ]
+      }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'NAME=$(jq -r .name); OUT=$(wtp add -b \"$NAME\" 2>&1); echo \"$OUT\" >&2; echo \"$OUT\" | grep \"Location:\" | sed \"s/.*Location: //\"'"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'WT_PATH=$(jq -r .worktree_path); NAME=$(basename \"$WT_PATH\"); wtp rm --force \"$NAME\" >&2 2>&1'"
           }
         ]
       }
