@@ -9,7 +9,7 @@ MESSAGE="${2:?Usage: send-report.sh <task_status> <message>}"
 WINDOW=$(tmux display-message -t "$TMUX_PANE" -p '#{window_name}')
 SESSION=$(tmux display-message -t "$TMUX_PANE" -p '#{session_name}')
 
-wq add --source task-report \
+"$HOME/ghq/github.com/MH4GF/works/.claude/tools/wq/wq" add --source task-report \
   --meta "{\"session_id\":\"${WINDOW}\",\"pane\":\"${SESSION}:${WINDOW}.0\",\"task_status\":\"${TASK_STATUS}\"}" \
   "${MESSAGE}"
 
