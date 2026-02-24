@@ -119,6 +119,16 @@ XMLタグで情報を分離。Claudeはタグ構造を強く認識する。
 </output_format>
 ```
 
+## スキル構造変更チェックリスト
+
+ファイル分割・ルーティング追加など、スキルのアーキテクチャを変更する際に確認：
+
+- [ ] `SKILL.md`のdescriptionが発動条件を正確に反映しているか
+- [ ] 分割先ファイルへのパス参照が正しいか（相対パス）
+- [ ] 分割後も単一SKILL.mdから全体の構造が把握できるか
+- [ ] 既存の発動トリガー（キーワード・ファイルパターン）が壊れていないか
+- [ ] `settings.json`の許可設定に新規ファイルパスの追加が必要か
+
 ## 詳細ガイド
 
 - **CLAUDE.md/コマンド規約**: [references/claude-code-conventions.md](references/claude-code-conventions.md)
