@@ -74,19 +74,13 @@ gh pr view <URL> --json commits
 - **コード修正**（優先）: リネーム・リファクタリング・コメント追加で疑問自体を消す
 - **PRコメント**: コードで表現しきれない背景・トレードオフをdiffインラインコメントで補足
 
-### 7. 未解決コメントの対応状況
+### 7. 未解決コメントの確認
 
 ```bash
 ~/.claude/skills/github-pr/gh-unresolved-threads <URL>
 ```
 
-未解決コメントがある場合、各コメントを分類:
-
-**対応不要（そのままでOK）:**
-- コード説明のコメント、FYI的な情報共有、確認済みの指摘
-
-**対応が必要:**
-- 議論が残っている・回答待ちのスレッド
+未解決コメントがある場合 → 指摘として記録。対応は[review-response.md](review-response.md)のフローで行う。
 
 ## Phase 2: 報告・議論
 
@@ -98,6 +92,7 @@ MUST: Phase 1の結果を一覧にしてユーザーに提示し、各指摘の�
 |---|------|------|--------|
 | 1 | CI失敗 | ログの要約 | 修正方針 |
 | 2 | ノイズ | 該当箇所 | 削除 or 残す理由 |
+| 3 | 未解決コメント | N件あり | review-responseフローで対応 |
 | ... | ... | ... | ... |
 
 判断が必要な項目（値の選定、命名、設計判断など）は、前例調査や根拠を添える。
@@ -111,52 +106,4 @@ tracesSampleRateの値 → 同プロジェクトのconsole設定を確認し前�
 
 ## Phase 3: 実行
 
-合意した方針に従い修正を実施。
-
-### 未解決コメントへの対応
-
-フェーズごとにまとめて進める（1件ずつ直列で完了させない）:
-
-1. **対応宣言**: 全件に「対応します」とコメント（作業前に対応意思を先んじて伝える）
-2. **実装**: 全件の修正をまとめて実施・コミット
-3. **完了報告**: 全件に完了コメント+resolveをまとめて実行
-
-完了コメントには対応理由を添える。自明な場合は簡潔でよい。
-
-<example>
-# Good: 理由あり
-対応しました。nilチェックが漏れておりpanicの可能性がありました。
-
-# Good: 自明な場合
-対応しました。typo修正です。
-
-# Bad: 理由なし
-対応しました。
-</example>
-
-### スレッドへの返信
-
-`gh-unresolved-threads`の出力に含まれる`id`（THREAD_ID）を使って返信する:
-
-```bash
-gh api graphql -f query='
-  mutation {
-    addPullRequestReviewThreadReply(input: {
-      pullRequestReviewThreadId: "<THREAD_ID>"
-      body: "返信内容"
-    }) { comment { id } }
-  }'
-```
-
-### スレッドのresolve
-
-```bash
-gh api graphql -f query='
-  mutation {
-    resolveReviewThread(input: {threadId: "<THREAD_ID>"}) {
-      thread { isResolved }
-    }
-  }'
-```
-
-返信とresolveを両方行う場合は、返信→resolveの順で実行する。
+合意した方針に従い修正を実施。未解決コメントへの対応は[review-response.md](review-response.md)に従う。
