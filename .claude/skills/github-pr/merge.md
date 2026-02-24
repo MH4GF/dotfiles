@@ -8,6 +8,8 @@
 
 [self-review.md](self-review.md)を実行し、未解決の指摘がないことを確認。指摘が残っている場合はマージに進まない。
 
+**非ブロッキングスレッド**: 情報共有・知識共有のみのスレッド（対応不要のFYI）は未解決でもマージをブロックしない。それ以外の未解決スレッドはresolveが必要（resolve方法は[review-response.md](review-response.md)参照）。判断に迷う場合はブロッカーとして扱い、ユーザーに確認する。
+
 ### 2. マージゲート
 
 approvedは必要条件であり十分条件ではない。以下の全てを確認する。
@@ -34,11 +36,11 @@ gh pr view <URL> --json state,title,mergeable,reviewDecision,reviews,mergeStateS
 
 ### 3. マージ実行
 
-1. レビュワーに感謝のコメントを投稿（レビュー内容を踏まえた短い感謝。定型文NG）
-2. マージ実行
+1. レビュー内容を踏まえた感謝コメントの文面を作成し、ユーザーに提示する（定型文NG）
+2. ユーザー承認後、コメント投稿 → マージ実行
 
 ```bash
-gh pr comment <URL> --body "<レビュー内容に応じた感謝コメント>"
+gh pr comment <URL> --body "<承認済みの感謝コメント>"
 gh pr merge <URL> --merge
 ```
 
