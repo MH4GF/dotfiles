@@ -34,7 +34,7 @@ gh api graphql \
             nodes{
               id
               isResolved
-              comments(first:3){
+              comments(first:100){
                 nodes{ author{login} body path line }
               }
             }
