@@ -365,7 +365,14 @@
       "mcp__chrome-devtools__press_key",
       "mcp__chrome-devtools__resize_page",
       "mcp__chrome-devtools__select_page",
-      "mcp__notion__notion-get-comments"
+      "mcp__notion__notion-get-comments",
+      "Bash(.claude/scripts/calendar-sync.sh:*)",
+      "Bash(.claude/scripts/claude-cron-status.sh:*)",
+      "Bash(.claude/scripts/tasks-sync.sh:*)",
+      "Bash(tmux list-windows:*)",
+      "Bash(tmux ls:*)",
+      "Skill(browser-ops)",
+      "WebFetch(domain:azukiazusa.dev)"
     ],
     "deny": [
       "Bash(rm -rf /)",
