@@ -139,6 +139,7 @@
       "Skill(issync:create-sub-issue)",
       "Skill(plan-tools:state-machine)",
       "Read(~/.claude/CLAUDE.md)",
+      "Read(~/.claude/skills/github-pr/*)",
       "Bash(awk:*)",
       "Bash(cut:*)",
       "Bash(date:*)",
