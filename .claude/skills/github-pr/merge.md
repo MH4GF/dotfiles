@@ -37,11 +37,10 @@ gh pr view <URL> --json state,title,mergeable,reviewDecision,reviews,mergeStateS
 ### 3. マージ実行
 
 1. レビュー内容を踏まえた感謝コメントの文面を作成し、ユーザーに提示する（定型文NG）
-2. ユーザー承認後、コメント投稿 → マージ実行
+2. ユーザー承認後、コメント投稿とマージを**単一ステップで実行**する（追加の確認不要）
 
 ```bash
-gh pr comment <URL> --body "<承認済みの感謝コメント>"
-gh pr merge <URL> --merge
+gh pr comment <URL> --body "<承認済みの感謝コメント>" && gh pr merge <URL> --merge
 ```
 
 実行後、後続PRがあれば報告する。
