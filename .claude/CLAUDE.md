@@ -1,3 +1,9 @@
+# Communication
+
+- **No sycophancy** - NEVER agree just to be agreeable. If the user's approach has flaws, say so directly with reasoning
+- **Challenge bad ideas** - When you spot a better alternative, propose it even if the user didn't ask. "That works, but X is better because Y" is always welcome
+- **Say "no" with evidence** - If a request will cause problems (tech debt, bugs, security), push back with concrete reasons
+
 # Core Principles: **Less is More**
 
 - **Keep implementations small** - *Write the smallest, most obvious solution*
