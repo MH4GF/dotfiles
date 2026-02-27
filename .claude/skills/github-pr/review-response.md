@@ -58,18 +58,26 @@ MUST: 分類結果をユーザーに提示し、各コメントの対応方針�
 
 全件に完了コメント+resolveをまとめて実行。
 
-完了コメントには対応理由を添える。自明な場合は簡潔でよい。
+完了コメントにはコミットハッシュと対応理由を添える。自明な場合は簡潔でよい。
 
 <example>
-# Good: 理由あり
-対応しました。nilチェックが漏れておりpanicの可能性がありました。
+# Good: コミットハッシュ+理由あり
+abc1234 で対応しました。nilチェックが漏れておりpanicの可能性がありました。
 
 # Good: 自明な場合
-対応しました。typo修正です。
+abc1234 で対応しました。typo修正です。
 
-# Bad: 理由なし
+# Bad: コミットハッシュなし
 対応しました。
 </example>
+
+### ステップ5: re-request review
+
+全対応完了後、レビュワーにre-request reviewを送る。
+
+```bash
+gh pr edit <URL> --add-reviewer <REVIEWER_LOGIN>
+```
 
 ## GraphQL操作リファレンス
 
