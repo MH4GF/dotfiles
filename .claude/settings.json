@@ -581,5 +581,6 @@
   "plansDirectory": ".claude/plans",
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
