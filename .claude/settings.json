@@ -394,6 +394,7 @@
       "mcp__notion__notion-search",
       "mcp__qmd__query",
       "Bash(mise ls:*)",
+      "Bash(tq:*)",
       "mcp__chrome-devtools__wait_for"
     ],
     "deny": [
@@ -493,6 +494,10 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.command // empty' | grep -qE 'git\\s+(-[a-zA-Z]+\\s+)*-C\\s' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"git -C は禁止です。cd path && git ... の形式で実行してください\"}}' || true"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command // empty' | grep -qE '\\s--help(\\s|$)' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"allow\",\"permissionDecisionReason\":\"--help flag is read-only\"}}' || true"
           }
         ]
       }
