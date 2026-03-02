@@ -392,7 +392,9 @@
       "mcp__chrome-devtools__get_console_message",
       "mcp__chrome-devtools__get_network_request",
       "mcp__notion__notion-search",
-      "mcp__qmd__query"
+      "mcp__qmd__query",
+      "Bash(mise ls:*)",
+      "mcp__chrome-devtools__wait_for"
     ],
     "deny": [
       "Bash(rm -rf /)",
