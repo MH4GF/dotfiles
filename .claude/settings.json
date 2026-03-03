@@ -545,26 +545,6 @@
           }
         ]
       }
-    ],
-    "WorktreeCreate": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash -c 'NAME=$(jq -r .name); OUT=$(wtp add -b \"$NAME\" 2>&1); echo \"$OUT\" >&2; echo \"$OUT\" | grep \"Location:\" | sed \"s/.*Location: //\"'"
-          }
-        ]
-      }
-    ],
-    "WorktreeRemove": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash -c 'WT_PATH=$(jq -r .worktree_path); NAME=$(basename \"$WT_PATH\"); wtp rm --force \"$NAME\" >&2 2>&1'"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
@@ -581,13 +561,22 @@
     "plan-tools@mh4gf-marketplace": true,
     "qa@mh4gf-marketplace": true,
     "gopls-lsp@claude-plugins-official": true,
-    "mh4gf-devops-setup@mh4gf-marketplace": true
+    "mh4gf-devops-setup@mh4gf-marketplace": false,
+    "tq@tq-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "tq-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "MH4GF/tq"
+      }
+    }
   },
   "language": "日本語",
   "alwaysThinkingEnabled": true,
   "plansDirectory": ".claude/plans",
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  },
-  "skipDangerousModePermissionPrompt": true
+  }
 }
