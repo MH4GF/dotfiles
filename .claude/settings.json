@@ -395,7 +395,17 @@
       "mcp__qmd__query",
       "Bash(mise ls:*)",
       "Bash(tq:*)",
-      "mcp__chrome-devtools__wait_for"
+      "mcp__chrome-devtools__wait_for",
+      "Bash(GOBIN=\"$HOME/go/bin\" go install:*)",
+      "Bash(node:*)",
+      "Bash(npx:*)",
+      "Bash(pnpm build:rulens:*)",
+      "Bash(pnpm exec:*)",
+      "Bash(pnpm test:vitest:*)",
+      "Bash(sqlite3:*)",
+      "Skill(tq:done)",
+      "WebFetch(domain:claude.com)",
+      "WebFetch(domain:www.vercelstatus.com)"
     ],
     "deny": [
       "Bash(rm -rf /)",
