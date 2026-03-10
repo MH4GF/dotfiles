@@ -34,5 +34,9 @@ ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
 ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
 ln -sfn $(realpath $(dirname ${0}))/.claude/skills ~/.claude/skills
 
+# tq prompts
+mkdir -p ~/.config/tq
+ln -sfn $(realpath $(dirname ${0}))/.config/tq/prompts ~/.config/tq/prompts
+
 # Claude MCP setup
 $(dirname ${0})/setup_claude_mcp.sh
