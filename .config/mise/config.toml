@@ -1,3 +1,6 @@
+[env]
+GOBIN = "{{env.HOME}}/.local/bin"
+
 [tools]
 node = "22.14.0"
 go = "1.21.2"
