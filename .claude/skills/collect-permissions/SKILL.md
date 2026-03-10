@@ -18,4 +18,6 @@ bash ~/.claude/skills/collect-permissions/scripts/collect_permissions.sh
 - プロジェクト固有の Skill: グローバルに追加すべきか確認
 </review_guidelines>
 
+ユーザーが候補を除外した場合、除外ルールをauto memoryに保存し次回以降の判断に活用する。
+
 設定追加後、`/commit` でdotfilesリポジトリにコミットする。

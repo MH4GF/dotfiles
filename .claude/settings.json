@@ -552,7 +552,8 @@
       "source": {
         "source": "github",
         "repo": "MH4GF/tq"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "language": "日本語",
