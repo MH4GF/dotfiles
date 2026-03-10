@@ -215,6 +215,3 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # wezterm
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
-# work-queue CLI
-export PATH="$HOME/ghq/github.com/MH4GF/works/.claude/tools/wq:$PATH"

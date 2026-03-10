@@ -298,7 +298,6 @@
       "Bash(obsidian templates)",
       "Bash(tmux list-clients:*)",
       "Bash(tmux list-sessions:*)",
-      "Bash(~/.claude/hooks/claude-notification.sh)",
       "Bash(~/.claude/hooks/focus-tmux-pane.sh:*)",
       "WebFetch(domain:glama.ai)",
       "WebFetch(domain:sentry.io)",
@@ -319,7 +318,6 @@
       "Bash(gog calendar events:*)",
       "Bash(npm view:*)",
       "WebFetch(domain:www.dbcost.com)",
-      "Skill(report-task-manager)",
       "Bash(alias:*)",
       "Bash(claude mcp:*)",
       "Bash(gcloud run jobs executions describe:*)",
@@ -343,15 +341,12 @@
       "mcp__sentry__get_trace_details",
       "mcp__sentry__search_events",
       "mcp__sentry__search_issue_events",
-      "Bash(.claude/tools/notify-watch/notify-watch:*)",
       "Bash(aws chatbot describe-slack-workspaces:*)",
       "Bash(gh help:*)",
       "Bash(gh secret list:*)",
       "Bash(gh status:*)",
       "Bash(mise use:*)",
       "Bash(terraform init:*)",
-      "Bash(wq:*)",
-      "Bash(~/.claude/skills/report-task-manager/scripts/send-report.sh:*)",
       "mcp__sentry__get_issue_tag_values",
       "Bash(go mod tidy:*)",
       "Bash(log show:*)",
@@ -519,28 +514,6 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.file_path | select(endswith(\".js\") or endswith(\".ts\") or endswith(\".jsx\") or endswith(\".tsx\"))' | xargs -r npx biome check --write --unsafe"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -n --arg cwd \"$PWD\" '{notification_type:\"stop\",cwd:$cwd}' | ~/.claude/hooks/claude-notification.sh"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/claude-notification.sh"
           }
         ]
       }
