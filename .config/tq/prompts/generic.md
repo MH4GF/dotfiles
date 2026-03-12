@@ -3,6 +3,7 @@ description: 汎用対話タスク
 auto: true
 mode: interactive
 on_done: classify-next-action
+on_cancel: classify-next-action
 ---
 {{.Action.Meta.instruction}}
 

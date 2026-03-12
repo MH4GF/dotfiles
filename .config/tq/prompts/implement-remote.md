@@ -2,6 +2,7 @@
 description: リモート実装タスク
 mode: remote
 on_done: classify-next-action
+on_cancel: classify-next-action
 ---
 {{.Action.Meta.instruction}}
 

@@ -3,6 +3,7 @@ description: CI修正
 auto: true
 mode: interactive
 on_done: classify-next-action
+on_cancel: classify-next-action
 ---
 PR {{.Task.URL}} のCI失敗を修正せよ。
 

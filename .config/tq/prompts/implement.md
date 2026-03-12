@@ -3,6 +3,7 @@ description: 汎用実装タスク
 auto: true
 mode: interactive
 on_done: classify-next-action
+on_cancel: classify-next-action
 ---
 {{.Action.Meta.instruction}}
 
