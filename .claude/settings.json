@@ -419,7 +419,17 @@
       "Skill(tq:implement)",
       "WebFetch(domain:aws.amazon.com)",
       "mcp__chrome-devtools__type_text",
-      "mcp__chrome-devtools__upload_file"
+      "mcp__chrome-devtools__upload_file",
+      "Bash(gcloud compute backend-services list:*)",
+      "Bash(gcloud compute ssl-certificates list:*)",
+      "Bash(gcloud compute target-https-proxies list:*)",
+      "Bash(gcloud compute url-maps describe dev-lb:*)",
+      "Bash(gcloud compute url-maps list:*)",
+      "Bash(go get:*)",
+      "Bash(gog auth:*)",
+      "WebFetch(domain:developers.linear.app)",
+      "WebFetch(domain:linear.app)",
+      "WebFetch(domain:studio.apollographql.com)",
     ],
     "deny": [
       "Bash(rm -rf /)",
