@@ -429,7 +429,7 @@
       "Bash(gog auth:*)",
       "WebFetch(domain:developers.linear.app)",
       "WebFetch(domain:linear.app)",
-      "WebFetch(domain:studio.apollographql.com)",
+      "WebFetch(domain:studio.apollographql.com)"
     ],
     "deny": [
       "Bash(rm -rf /)",
