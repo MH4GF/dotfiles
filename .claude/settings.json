@@ -429,7 +429,9 @@
       "Bash(gog auth:*)",
       "WebFetch(domain:developers.linear.app)",
       "WebFetch(domain:linear.app)",
-      "WebFetch(domain:studio.apollographql.com)"
+      "WebFetch(domain:studio.apollographql.com)",
+      "Bash(bash ~/.claude/skills/collect-permissions/scripts/collect_permissions.sh)",
+      "Bash(goreleaser check:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -507,7 +509,6 @@
       "/tmp"
     ]
   },
-  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
@@ -574,7 +575,8 @@
     "qa@mh4gf-marketplace": true,
     "gopls-lsp@claude-plugins-official": true,
     "mh4gf-devops-setup@mh4gf-marketplace": false,
-    "tq@tq-marketplace": true
+    "tq@tq-marketplace": true,
+    "frontend-design@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "tq-marketplace": {
