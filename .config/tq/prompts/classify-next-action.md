@@ -1,6 +1,5 @@
 ---
 description: 完了アクションの結果から次アクションを判断
-auto: true
 mode: noninteractive
 ---
 タスク「{{.Task.Title}}」({{.Task.URL}}) の前アクションが完了した。

@@ -1,6 +1,5 @@
 ---
 description: PRセルフレビュー
-auto: true
 mode: interactive
 on_done: classify-next-action
 on_cancel: classify-next-action

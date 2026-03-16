@@ -1,8 +1,6 @@
 ---
 description: Gmail Inbox Zero
 mode: noninteractive
-allowed_tools: Bash,Read
-timeout: 300
 ---
 Gmailインボックスを整理し、Inbox Zeroを達成する。
 

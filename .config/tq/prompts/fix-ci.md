@@ -1,6 +1,5 @@
 ---
 description: CI修正
-auto: true
 mode: interactive
 on_done: classify-next-action
 on_cancel: classify-next-action

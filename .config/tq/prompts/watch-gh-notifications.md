@@ -1,8 +1,6 @@
 ---
 description: Watch GitHub notifications
-mode: noninteractive
-allowed_tools: Bash,Read
-timeout: 300
+mode: interactive
 ---
 GitHub通知を取得・分類し、必要なタスク/アクションを作成する。
 

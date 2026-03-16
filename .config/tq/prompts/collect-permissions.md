@@ -1,8 +1,6 @@
 ---
 description: 全リポジトリの settings.local.json から許可設定を収集しグローバル設定に統合
 mode: interactive
-allowed_tools: Bash,Read
-timeout: 300
 ---
 スクリプトを実行し、グローバル設定（`~/.claude/settings.json`）に未登録の候補を一覧表示する。
 
