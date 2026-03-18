@@ -17,7 +17,7 @@ tq action list --task {{.Task.ID}}
 
 ---
 
-PR {{.Task.URL}} のCI失敗を修正せよ。
+PR {{ index .Task.Meta "url" }} のCI失敗を修正せよ。
 
 1. CI失敗ログを確認
 2. 原因を特定し修正

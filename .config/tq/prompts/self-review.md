@@ -17,7 +17,7 @@ tq action list --task {{.Task.ID}}
 
 ---
 
-{{.Task.URL}} のPRをセルフレビューせよ。
+{{ index .Task.Meta "url" }} のPRをセルフレビューせよ。
 
 /github-pr スキルのセルフレビューフローに従うこと。
 レビュー指摘があればコメントし、修正が必要ならコード修正してpushする。

@@ -20,7 +20,4 @@ tq action list --task {{.Task.ID}}
 {{.Action.Meta.instruction}}
 
 対象: {{.Task.Title}}
-{{- if .Task.URL}}
-参考: {{.Task.URL}}
-{{- end}}
 完了したら: /tq:done

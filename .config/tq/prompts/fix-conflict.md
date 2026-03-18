@@ -17,7 +17,7 @@ tq action list --task {{.Task.ID}}
 
 ---
 
-PR {{.Task.URL}} のコンフリクトを解消せよ。
+PR {{ index .Task.Meta "url" }} のコンフリクトを解消せよ。
 
 /github-pr スキルのコンフリクト解消フローに従うこと。
 

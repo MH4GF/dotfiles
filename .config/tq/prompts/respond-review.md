@@ -17,7 +17,7 @@ tq action list --task {{.Task.ID}}
 
 ---
 
-PR {{.Task.URL}} のレビューコメントに対応せよ。
+PR {{ index .Task.Meta "url" }} のレビューコメントに対応せよ。
 
 /github-pr スキルのレビューコメント対応フローに従うこと。
 

@@ -17,7 +17,7 @@ tq action list --task {{.Task.ID}}
 
 ---
 
-PR {{.Task.URL}} をマージせよ。
+PR {{ index .Task.Meta "url" }} をマージせよ。
 
 /github-pr スキルのマージ判断フローに従うこと。
 

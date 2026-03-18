@@ -30,5 +30,5 @@ tq action list --task {{.Task.ID}}
 
 対象: {{.Task.Title}}
 {{- if .Task.URL}}
-参考: {{.Task.URL}}
+参考: {{ index .Task.Meta "url" }}
 {{- end}}
