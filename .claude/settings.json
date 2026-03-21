@@ -431,7 +431,10 @@
       "WebFetch(domain:linear.app)",
       "WebFetch(domain:studio.apollographql.com)",
       "Bash(bash ~/.claude/skills/collect-permissions/scripts/collect_permissions.sh)",
-      "Bash(goreleaser check:*)"
+      "Bash(goreleaser check:*)",
+      "Skill(tq:create-action)",
+      "Skill(tq:manager)",
+      "WebFetch(domain:docs.github.com)"
     ],
     "deny": [
       "Bash(rm -rf /)",
