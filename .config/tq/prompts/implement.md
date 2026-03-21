@@ -1,6 +1,6 @@
 ---
 description: 汎用実装タスク
-mode: remote
+mode: interactive
 on_done: classify-next-action
 on_cancel: classify-next-action
 ---
@@ -29,6 +29,6 @@ tq action list --task {{.Task.ID}}
 6. **Pull Request を作成** — これが完了シグナルになる
 
 対象: {{.Task.Title}}
-{{- if .Task.URL}}
+{{- if index .Task.Meta "url"}}
 参考: {{ index .Task.Meta "url" }}
 {{- end}}

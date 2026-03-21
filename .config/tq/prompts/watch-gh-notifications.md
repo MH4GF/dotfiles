@@ -31,7 +31,6 @@ subject_urlからrepo名と番号を抽出し、subject_typeに応じて取得:
 以下は既読にしてスキップ:
 - state が merged/closed
 - Discussion/Release
-- bot（dependabot, renovate, github-actions等）による自動更新通知
 - `reason=review_requested` かつ自分が既にレビュー済み（reviewsに自分のAPPROVED/CHANGES_REQUESTEDがある）
 
 #### 2c. リモートアクションPR検出
@@ -39,7 +38,9 @@ subject_urlからrepo名と番号を抽出し、subject_typeに応じて取得:
 headRefNameが `tq-<数字>-` にマッチする場合:
 ```bash
 # 例: tq-42-fix-bug → action_id=42
-tq action done <action_id> "remote:pr=<pr_url>"
+# 2aで取得したPR詳細からresultを構築
+tq action done <action_id> "Remote action created PR: <pr_url>
+State: <state>, Review: <reviewDecision>, CI: <pass/fail/pending>, Draft: <yes/no>"
 ```
 既読にしてスキップ。
 
