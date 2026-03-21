@@ -22,7 +22,7 @@ gh api /notifications --paginate --jq '.[] | {id: .id, reason: .reason, subject_
 
 subject_urlからrepo名と番号を抽出し、subject_typeに応じて取得:
 
-- **PullRequest**: `gh pr view <number> --repo <owner/repo> --json url,state,author,headRefName,reviewDecision,mergeStateStatus,statusCheckRollup,isDraft`
+- **PullRequest**: `gh pr view <number> --repo <owner/repo> --json url,state,author,headRefName,reviewDecision,mergeStateStatus,statusCheckRollup,isDraft,reviews`
 - **Issue**: `gh issue view <number> --repo <owner/repo> --json url,state,author`
 - **Discussion/Release**: `gh api`で取得
 
@@ -32,6 +32,7 @@ subject_urlからrepo名と番号を抽出し、subject_typeに応じて取得:
 - state が merged/closed
 - Discussion/Release
 - bot（dependabot, renovate, github-actions等）による自動更新通知
+- `reason=review_requested` かつ自分が既にレビュー済み（reviewsに自分のAPPROVED/CHANGES_REQUESTEDがある）
 
 #### 2c. リモートアクションPR検出
 
@@ -48,12 +49,13 @@ tq action done <action_id> "remote:pr=<pr_url>"
 
 | 優先 | 条件 | プロンプト |
 |---|---|---|
-| 1 | `mergeStateStatus: "BEHIND"` or conflicting | `fix-conflict` |
-| 2 | statusCheckRollup に failure あり | `fix-ci` |
-| 3 | `reviewDecision: "CHANGES_REQUESTED"` / 未対応レビューコメント | `respond-review` |
-| 4 | `reviewDecision: "APPROVED"` + CI pass + mergeable | `merge-pr` |
-| 5 | 自分のPRで未レビュー | `self-review` |
-| 6 | その他の実装・修正依頼 | `implement` |
+| 1 | `reason=review_requested` + 未レビュー | `review-pr` |
+| 2 | `mergeStateStatus: "BEHIND"` or conflicting | `fix-conflict` |
+| 3 | statusCheckRollup に failure あり | `fix-ci` |
+| 4 | `reviewDecision: "CHANGES_REQUESTED"` / 未対応レビューコメント | `respond-review` |
+| 5 | `reviewDecision: "APPROVED"` + CI pass + mergeable | `merge-pr` |
+| 6 | 自分のPRで未レビュー | `self-review` |
+| 7 | その他の実装・修正依頼 | `implement` |
 
 **選択不可**: `classify-gh-notification`, `classify-next-action`, `watch-gh-notifications`
 
