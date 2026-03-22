@@ -15,3 +15,4 @@ compose.override.yml
 compose.override.yaml
 .claude/plans/
 .claude/qa/
+.claude/worktrees/
