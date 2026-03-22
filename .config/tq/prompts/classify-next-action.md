@@ -1,8 +1,8 @@
 ---
 description: 完了アクションの結果から次アクションを判断
-mode: interactive
+mode: noninteractive
 ---
-タスク「{{.Task.Title}}」({{ index .Task.Meta "url" }}) の前アクションが完了した。
+タスク「{{.Task.Title}}」({{ get .Task.Meta "url" }}) の前アクションが完了した。
 結果を分析し、Phase A → B → C を順に実行せよ。
 
 ## 事前準備
@@ -63,7 +63,7 @@ tq action list --task {{.Task.ID}}
 
 ## Phase C: タスク完了判定（Phase B でアクション未作成時のみ）
 
-全アクション履歴を踏まえ、タスク「{{.Task.Title}}」({{ index .Task.Meta "url" }}) の目的が達成済みか判定する。
+全アクション履歴を踏まえ、タスク「{{.Task.Title}}」({{ get .Task.Meta "url" }}) の目的が達成済みか判定する。
 
 - 以下をすべて確認した上で完了と判定する:
   - PRマージ済みだけでは完了の十分条件にならない

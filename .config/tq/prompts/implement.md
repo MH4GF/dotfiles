@@ -29,6 +29,6 @@ tq action list --task {{.Task.ID}}
 6. **Pull Request を作成** — これが完了シグナルになる
 
 対象: {{.Task.Title}}
-{{- if index .Task.Meta "url"}}
-参考: {{ index .Task.Meta "url" }}
+{{- if get .Task.Meta "url"}}
+参考: {{ get .Task.Meta "url" }}
 {{- end}}
