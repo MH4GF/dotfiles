@@ -434,7 +434,12 @@
       "Bash(goreleaser check:*)",
       "Skill(tq:create-action)",
       "Skill(tq:manager)",
-      "WebFetch(domain:docs.github.com)"
+      "WebFetch(domain:docs.github.com)",
+      "Skill(dig:dig)",
+      "Skill(collect-permissions)",
+      "Skill(claude-session-to-evergreen)",
+      "WebFetch(domain:docs.devin.ai)",
+      "WebFetch(domain:gist.github.com)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -579,7 +584,8 @@
     "gopls-lsp@claude-plugins-official": true,
     "mh4gf-devops-setup@mh4gf-marketplace": false,
     "tq@tq-marketplace": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "gh-notifications@tq-marketplace": true
   },
   "extraKnownMarketplaces": {
     "tq-marketplace": {
