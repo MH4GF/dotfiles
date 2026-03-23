@@ -439,7 +439,8 @@
       "Skill(collect-permissions)",
       "Skill(claude-session-to-evergreen)",
       "WebFetch(domain:docs.devin.ai)",
-      "WebFetch(domain:gist.github.com)"
+      "WebFetch(domain:gist.github.com)",
+      "Bash(.claude/scripts/daily-edited-notes.sh)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -509,7 +510,6 @@
       "Write(/etc/sudoers)"
     ],
     "ask": [
-      "Bash(gh api:*)",
       "Bash(gh pr comment:*)",
       "Bash(gh pr merge:*)"
     ],
