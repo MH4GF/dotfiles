@@ -440,7 +440,11 @@
       "Skill(claude-session-to-evergreen)",
       "WebFetch(domain:docs.devin.ai)",
       "WebFetch(domain:gist.github.com)",
-      "Bash(.claude/scripts/daily-edited-notes.sh)"
+      "Bash(.claude/scripts/daily-edited-notes.sh)",
+      "Skill(daily-note-update)",
+      "Skill(evergreen-improve)",
+      "Skill(gh-notifications:watch)",
+      "WebFetch(domain:speakerdeck.com)"
     ],
     "deny": [
       "Bash(rm -rf /)",
