@@ -27,9 +27,13 @@
 - **Reproducible evidence** - All findings MUST include steps another user can independently verify (e.g., exact CLI commands executed and their output)
 - **Executable commands only** - Commands in reports MUST be copy-paste runnable, never abbreviated pseudocode
 
+# Temporary Files
+
+- **Use `.claude/tmp/`** - NEVER write temporary documents to `/tmp/`. Always use `.claude/tmp/` in the current working directory. Temporary investigation results, drafts, and intermediate outputs are reusable across sessions; `/tmp/` is ephemeral and hard to explore.
+
 # External Service Writes
 
-- **Draft before MCP write** - Before creating/updating content via MCP (Linear, Notion, Slack, etc.), write a markdown draft to `/tmp/` and get user approval before executing
+- **Draft before MCP write** - Before creating/updating content via MCP (Linear, Notion, Slack, etc.), write a markdown draft to `.claude/tmp/` and get user approval before executing
 
 # Plan Mode
 
