@@ -444,7 +444,13 @@
       "Skill(daily-note-update)",
       "Skill(evergreen-improve)",
       "Skill(gh-notifications:watch)",
-      "WebFetch(domain:speakerdeck.com)"
+      "WebFetch(domain:speakerdeck.com)",
+      "Skill(gh-notifications:respond-review)",
+      "Skill(gh-notifications:self-review)",
+      "Skill(moneyforward-categorize)",
+      "WebFetch(domain:docs.cloud.google.com)",
+      "WebFetch(domain:iterm2.com)",
+      "mcp__chrome-devtools__drag"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -608,5 +614,6 @@
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  }
+  },
+  "model": "sonnet"
 }
