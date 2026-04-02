@@ -450,7 +450,10 @@
       "Skill(moneyforward-categorize)",
       "WebFetch(domain:docs.cloud.google.com)",
       "WebFetch(domain:iterm2.com)",
-      "mcp__chrome-devtools__drag"
+      "mcp__chrome-devtools__drag",
+      "Bash(gh api notifications:*)",
+      "Bash(~/.claude/plugins/cache/tq-marketplace/gh-notifications/*/scripts/gh-fetch-notifications:*)",
+      "Bash(mise ls-remote:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -614,6 +617,5 @@
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  },
-  "model": "sonnet"
+  }
 }
