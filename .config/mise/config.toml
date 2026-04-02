@@ -3,7 +3,7 @@ GOBIN = "{{env.HOME}}/.local/bin"
 
 [tools]
 node = "22.14.0"
-go = "1.21.2"
+go = "1.26.1"
 ruby = "3.2.2"
 
 [settings]
