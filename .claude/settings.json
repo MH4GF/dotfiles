@@ -453,7 +453,13 @@
       "mcp__chrome-devtools__drag",
       "Bash(gh api notifications:*)",
       "Bash(~/.claude/plugins/cache/tq-marketplace/gh-notifications/*/scripts/gh-fetch-notifications:*)",
-      "Bash(mise ls-remote:*)"
+      "Bash(mise ls-remote:*)",
+      "Skill(review-emails)",
+      "mcp__claude_ai_Slack__slack_read_channel",
+      "mcp__claude_ai_Slack__slack_read_thread",
+      "mcp__claude_ai_Slack__slack_search_channels",
+      "mcp__claude_ai_Slack__slack_search_public_and_private",
+      "mcp__slack__slack_get_channel_history"
     ],
     "deny": [
       "Bash(rm -rf /)",
