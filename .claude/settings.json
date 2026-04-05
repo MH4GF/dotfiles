@@ -459,7 +459,9 @@
       "mcp__claude_ai_Slack__slack_read_thread",
       "mcp__claude_ai_Slack__slack_search_channels",
       "mcp__claude_ai_Slack__slack_search_public_and_private",
-      "mcp__slack__slack_get_channel_history"
+      "mcp__slack__slack_get_channel_history",
+      "Bash(agent-browser:*)",
+      "WebFetch(domain:mastra.ai)"
     ],
     "deny": [
       "Bash(rm -rf /)",
