@@ -453,7 +453,8 @@
       "WebFetch(domain:docs.cloud.google.com)",
       "WebFetch(domain:iterm2.com)",
       "mcp__chrome-devtools__drag",
-      "Bash(gh api notifications:*)",
+      "Bash(gh api /notifications:*)",
+      "Bash(gh api /repos:*)",
       "Bash(~/.claude/plugins/cache/tq-marketplace/gh-notifications/*/scripts/gh-fetch-notifications:*)",
       "Bash(mise ls-remote:*)",
       "Skill(review-emails)",
@@ -463,7 +464,9 @@
       "mcp__claude_ai_Slack__slack_search_public_and_private",
       "mcp__slack__slack_get_channel_history",
       "Bash(agent-browser:*)",
-      "WebFetch(domain:mastra.ai)"
+      "WebFetch(domain:mastra.ai)",
+      "Skill(gh-ops:fix-conflict)",
+      "Skill(gh-ops:self-review)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -610,7 +613,8 @@
     "mh4gf-devops-setup@mh4gf-marketplace": false,
     "tq@tq-marketplace": true,
     "frontend-design@claude-plugins-official": true,
-    "gh-notifications@tq-marketplace": true
+    "gh-notifications@tq-marketplace": true,
+    "gh-ops@tq-marketplace": true
   },
   "extraKnownMarketplaces": {
     "tq-marketplace": {
