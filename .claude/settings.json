@@ -466,7 +466,9 @@
       "Bash(agent-browser:*)",
       "WebFetch(domain:mastra.ai)",
       "Skill(gh-ops:fix-conflict)",
-      "Skill(gh-ops:self-review)"
+      "Skill(gh-ops:self-review)",
+      "Skill(gh-ops:respond-review)",
+      "mcp__chrome-devtools__close_page"
     ],
     "deny": [
       "Bash(rm -rf /)",
