@@ -470,7 +470,12 @@
       "Skill(gh-ops:fix-conflict)",
       "Skill(gh-ops:self-review)",
       "Skill(gh-ops:respond-review)",
-      "mcp__chrome-devtools__close_page"
+      "mcp__chrome-devtools__close_page",
+      "Bash(~/.claude/bin/aggregate-hook-logs.sh:*)",
+      "Bash(~/.claude/bin/rotate-hook-logs.sh:*)",
+      "Bash(git branch:*)",
+      "Bash(pwd:*)",
+      "Bash(printenv:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
