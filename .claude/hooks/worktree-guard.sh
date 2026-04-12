@@ -27,6 +27,9 @@ esac
 
 [ -z "$target" ] && exit 0
 
+# plan ファイルは main repo や別 worktree 側に保存される場合があるため除外
+echo "$target" | grep -qF "/.claude/plans/" && exit 0
+
 # main repo パスを含むが worktree パスは含まない → main を参照している
 if echo "$target" | grep -qF "$main_repo/" && ! echo "$target" | grep -qF "$cwd"; then
   cat <<EOF
