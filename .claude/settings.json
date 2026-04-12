@@ -631,7 +631,7 @@
   },
   "language": "日本語",
   "alwaysThinkingEnabled": true,
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "plansDirectory": ".claude/plans",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {

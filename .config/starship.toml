@@ -5,6 +5,9 @@ disabled = false
 threshold = -1
 style = "bold dimmed green"
 
+[gcloud]
+disabled = true
+
 [nodejs]
 disabled = true
 
