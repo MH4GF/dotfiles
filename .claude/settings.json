@@ -288,7 +288,7 @@
       "Bash(gh repo view:*)",
       "Bash(git check-ignore:*)",
       "Bash(obsidian commands:*)",
-      "Bash(obsidian daily:read:*)",
+      "Bash(obsidian daily:*)",
       "Bash(obsidian backlinks:*)",
       "Bash(obsidian files:*)",
       "Bash(obsidian links:*)",
@@ -474,7 +474,11 @@
       "mcp__chrome-devtools__close_page",
 "Bash(git branch:*)",
       "Bash(pwd:*)",
-      "Bash(printenv:*)"
+      "Bash(printenv:*)",
+      "Bash(gh api /user:*)",
+      "Bash(gh auth status:*)",
+      "Write(.claude/tmp/**)",
+      "Skill(daily-report)"
     ],
     "deny": [
       "Bash(rm -rf /)",
