@@ -34,8 +34,6 @@ ln -sf $(realpath $(dirname ${0}))/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
 ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
 ln -sfn $(realpath $(dirname ${0}))/.claude/skills ~/.claude/skills
-ln -sfn $(realpath $(dirname ${0}))/.claude/bin ~/.claude/bin
-ln -sfn $(realpath $(dirname ${0}))/.claude/scripts ~/.claude/scripts
 
 # tq prompts
 mkdir -p ~/.config/tq
