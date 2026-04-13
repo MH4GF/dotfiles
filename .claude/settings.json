@@ -535,7 +535,10 @@
     ],
     "ask": [
       "Bash(gh pr comment:*)",
-      "Bash(gh pr merge:*)"
+      "Bash(gh pr create:*)",
+      "Bash(gh pr edit:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh api graphql:*)"
     ],
     "additionalDirectories": [
       "/tmp"
