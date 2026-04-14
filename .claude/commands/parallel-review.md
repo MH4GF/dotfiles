@@ -10,7 +10,7 @@ description: 複数の観点で並列コードレビューを実行
 
 1. **codex-review** - `codex review` CLIによるコードレビュー
 2. **qa:claude-md-checker** - CLAUDE.md準拠チェック
-3. **simplify** - コードの簡潔性・保守性・再利用性・品質・効率性チェックと修正
+3. **simplify** - コードの簡潔性・保守性・再利用性・品質・効率性チェックと修正（Skill tool経由）
 
 ### 実行方法
 
@@ -18,8 +18,8 @@ description: 複数の観点で並列コードレビューを実行
 
 ```
 Agent tool: subagent_type: "qa:claude-md-checker" → CLAUDE.md準拠チェック
-Skill tool: `/codex-review` → コードレビュー
-Skill tool: `/simplify` → 簡潔性・品質チェック
+Skill tool: skill: "codex-review" → コードレビュー
+Skill tool: skill: "simplify" → 簡潔性・品質チェック
 ```
 
 ### 出力形式
