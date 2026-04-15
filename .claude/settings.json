@@ -467,7 +467,11 @@
       "Bash(gh api /user:*)",
       "Bash(gh auth status:*)",
       "Write(.claude/tmp/**)",
-      "Skill(daily-report)"
+      "Skill(daily-report)",
+      "mcp__linear__get_project",
+      "WebFetch(domain:fly.io)",
+      "Bash(railway logs:*)",
+      "Bash(go mod:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
