@@ -487,7 +487,8 @@
       "Skill(timesheet)",
       "Skill(unsubscribe-email)",
       "WebFetch(domain:event-driven.io)",
-      "WebFetch(domain:packagemain.tech)"
+      "WebFetch(domain:packagemain.tech)",
+      "Bash(git checkout -b:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",

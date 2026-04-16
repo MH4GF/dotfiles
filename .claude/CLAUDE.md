@@ -17,6 +17,7 @@
 - **Commit per task** - Commit when each logical task completes; include context and reasoning in commit message
 - **No "why" in code comments** - History lives in commits, not in code
 - **Describe the change, not the trigger** - Commit messages MUST state what changed, never the process that caused it (e.g., "address review feedback" is banned—describe the actual change instead)
+- **No `git -C`** - Always run git commands from within the target directory. Use `cd <path> && git ...` instead of `git -C <path> ...`
 
 # GitHub CLI
 
