@@ -471,7 +471,9 @@
       "mcp__linear__get_project",
       "WebFetch(domain:fly.io)",
       "Bash(railway logs:*)",
-      "Bash(go mod:*)"
+      "Bash(go mod:*)",
+      "Bash(~/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-prepare-review-replies:*)",
+      "Bash(/Users/mh4gf/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-prepare-review-replies:*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -545,7 +547,11 @@
       "Bash(gh pr create:*)",
       "Bash(gh pr edit:*)",
       "Bash(gh pr merge:*)",
-      "Bash(gh api graphql:*)"
+      "Bash(gh api graphql:*)",
+      "Bash(~/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-reply-review-thread:*)",
+      "Bash(/Users/mh4gf/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-reply-review-thread:*)",
+      "Bash(~/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-resolve-review-thread:*)",
+      "Bash(/Users/mh4gf/.claude/plugins/marketplaces/tq-marketplace/.claude-plugins/gh-ops/scripts/gh-resolve-review-thread:*)"
     ],
     "additionalDirectories": [
       "/tmp"
