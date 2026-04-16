@@ -24,7 +24,6 @@ brew 'duckdb'
 brew 'flock'
 brew 'mas'
 brew 'terminal-notifier'
-brew 'satococoa/tap/wtp'
 
 cask 'slack'
 cask 'karabiner-elements'
