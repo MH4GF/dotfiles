@@ -485,7 +485,9 @@
       "Skill(unsubscribe-email)",
       "WebFetch(domain:event-driven.io)",
       "WebFetch(domain:packagemain.tech)",
-      "Bash(git checkout -b:*)"
+      "Bash(git checkout -b:*)",
+      "Glob",
+      "mcp__chrome-devtools__new_page"
     ],
     "deny": [
       "Bash(rm -rf /)",
