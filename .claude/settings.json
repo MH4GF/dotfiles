@@ -487,7 +487,12 @@
       "WebFetch(domain:packagemain.tech)",
       "Bash(git checkout -b:*)",
       "Glob",
-      "mcp__chrome-devtools__new_page"
+      "mcp__chrome-devtools__new_page",
+      "Bash(mo:*)",
+      "Bash(sysctl:*)",
+      "Bash(top:*)",
+      "Read(~/.local/share/**)",
+      "mcp__linear__list_projects"
     ],
     "deny": [
       "Bash(rm -rf /)",
