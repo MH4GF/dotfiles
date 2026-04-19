@@ -27,17 +27,6 @@ ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/confi
 mkdir -p ~/.config/iterm2/
 ln -sf $(realpath $(dirname ${0}))/.config/iterm2/com.googlecode.iterm2.plist ~/.config/iterm2/com.googlecode.iterm2.plist
 
-# Claude settings
-mkdir -p ~/.claude
-ln -sf $(realpath $(dirname ${0}))/.claude/commands ~/.claude/commands
-ln -sf $(realpath $(dirname ${0}))/.claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -sf $(realpath $(dirname ${0}))/.claude/settings.json ~/.claude/settings.json
-ln -sf $(realpath $(dirname ${0}))/.claude/hooks ~/.claude/hooks
-ln -sfn $(realpath $(dirname ${0}))/.claude/skills ~/.claude/skills
-
 # tq prompts
 mkdir -p ~/.config/tq
 ln -sfn $(realpath $(dirname ${0}))/.config/tq/prompts ~/.config/tq/prompts
-
-# Claude MCP setup
-$(dirname ${0})/setup_claude_mcp.sh
