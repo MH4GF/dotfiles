@@ -681,5 +681,6 @@
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754049856266
-  }
+  },
+  "skipAutoPermissionPrompt": true
 }
