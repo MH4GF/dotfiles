@@ -163,7 +163,7 @@ require("lazy").setup({
           },
         },
       })
-      vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
+      vim.keymap.set("n", "<leader>e", ":Neotree reveal<CR>", { desc = "Reveal current file in Neo-tree" })
       vim.keymap.set("n", "<leader>o", ":Neotree focus<CR>", { desc = "Focus Neo-tree" })
     end,
   },
