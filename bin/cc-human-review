@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "$#" -eq 0 ]; then
+  echo "usage: cc-human-review <path> [<path>...]" >&2
+  exit 1
+fi
+
+if [ -z "${TMUX:-}" ]; then
+  echo "cc-human-review: not inside a tmux session" >&2
+  exit 1
+fi
+
+paths=()
+for p in "$@"; do
+  if [ ! -e "$p" ]; then
+    echo "cc-human-review: skipping missing path: $p" >&2
+    continue
+  fi
+  abs=$(cd "$(dirname "$p")" && printf '%s/%s' "$(pwd)" "$(basename "$p")")
+  paths+=("$abs")
+done
+
+if [ "${#paths[@]}" -eq 0 ]; then
+  echo "cc-human-review: no existing paths to open" >&2
+  exit 1
+fi
+
+cmd=(nvim -p)
+for p in "${paths[@]}"; do
+  cmd+=("$p")
+done
+
+target=${TMUX_PANE:-}
+if [ -n "$target" ]; then
+  tmux split-window -h -t "$target" "${cmd[@]}"
+else
+  tmux split-window -h "${cmd[@]}"
+fi

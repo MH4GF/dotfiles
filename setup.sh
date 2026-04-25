@@ -30,3 +30,7 @@ ln -sf $(realpath $(dirname ${0}))/.config/iterm2/com.googlecode.iterm2.plist ~/
 # tq prompts
 mkdir -p ~/.config/tq
 ln -sfn $(realpath $(dirname ${0}))/.config/tq/prompts ~/.config/tq/prompts
+
+# bin scripts
+mkdir -p ~/.local/bin
+ln -sf $(realpath $(dirname ${0}))/bin/cc-human-review ~/.local/bin/cc-human-review
