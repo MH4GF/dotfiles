@@ -116,6 +116,14 @@ vim.keymap.set("n", "<leader>fo", function()
   print("Opening in Finder: " .. path)
 end, { desc = "Open file in Finder" })
 
+-- mo でブラウザプレビュー
+vim.keymap.set("n", "<leader>mo", function()
+  local path = vim.fn.expand("%:p")
+  path = extract_real_path(path)
+  vim.cmd("!mo --open " .. vim.fn.shellescape(path))
+  print("Opening in mo: " .. path)
+end, { desc = "Preview file with mo in browser" })
+
 -- 設定再読み込み（lazy.nvim対応）
 vim.keymap.set("n", "<leader>r", function()
   vim.cmd("Lazy reload")
