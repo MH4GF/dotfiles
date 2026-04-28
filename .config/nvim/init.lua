@@ -120,8 +120,14 @@ end, { desc = "Open file in Finder" })
 vim.keymap.set("n", "<leader>mo", function()
   local path = vim.fn.expand("%:p")
   path = extract_real_path(path)
-  vim.cmd("!mo --open " .. vim.fn.shellescape(path))
-  print("Opening in mo: " .. path)
+  local output = vim.fn.system("mo --json --no-open " .. vim.fn.shellescape(path))
+  local url = output:match('"url"%s*:%s*"([^"]+%?file=[^"]+)"')
+  if url then
+    vim.fn.system("open " .. vim.fn.shellescape(url))
+    print("Opening in mo: " .. url)
+  else
+    print("Failed to parse mo output: " .. output)
+  end
 end, { desc = "Preview file with mo in browser" })
 
 -- 設定再読み込み（lazy.nvim対応）
