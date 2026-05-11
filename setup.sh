@@ -34,3 +34,6 @@ ln -sfn $(realpath $(dirname ${0}))/.config/tq/prompts ~/.config/tq/prompts
 # bin scripts
 mkdir -p ~/.local/bin
 ln -sf $(realpath $(dirname ${0}))/bin/cc-human-review ~/.local/bin/cc-human-review
+
+# git hooks
+ln -sfn $(realpath $(dirname ${0}))/.githooks ~/.githooks

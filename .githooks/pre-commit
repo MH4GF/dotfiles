@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if command -v gitleaks >/dev/null 2>&1; then
+  git diff --cached | awk '/^\+[^+]/' | gitleaks stdin --verbose --redact
+else
+  echo "gitleaks not installed; skipping secret scan." >&2
+fi
+
+for candidate in .husky/_/pre-commit .git/hooks/pre-commit; do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" "$@"
+  fi
+done
