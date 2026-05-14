@@ -6,11 +6,6 @@ if [ "$#" -eq 0 ]; then
   exit 1
 fi
 
-if [ -z "${TMUX:-}" ]; then
-  echo "cc-human-review: not inside a tmux session" >&2
-  exit 1
-fi
-
 paths=()
 for p in "$@"; do
   if [ ! -e "$p" ]; then
@@ -26,14 +21,32 @@ if [ "${#paths[@]}" -eq 0 ]; then
   exit 1
 fi
 
+# Pick a tmux pane to split.
+# - In a foreground tmux session $TMUX_PANE is set and we use it directly.
+# - In a bg / headless session $TMUX_PANE is unset, so we reach into the
+#   tmux server and target the most recently active client's current pane.
+#   That makes the review pane pop up wherever the user is actually looking,
+#   even if they have switched to a different tmux window since dispatch.
+target=${TMUX_PANE:-}
+if [ -z "$target" ]; then
+  session=$(tmux list-clients -F '#{client_activity}|#{client_session}' 2>/dev/null | sort -rn | head -1 | cut -d'|' -f2)
+  if [ -n "$session" ]; then
+    target=$(tmux display-message -t "$session" -p '#{pane_id}' 2>/dev/null || true)
+  fi
+fi
+
+if [ -z "$target" ]; then
+  echo "cc-human-review: skipped — no tmux client to host the review pane" >&2
+  echo "paths:" >&2
+  for p in "${paths[@]}"; do
+    echo "  - $p" >&2
+  done
+  exit 0
+fi
+
 cmd=(nvim -p)
 for p in "${paths[@]}"; do
   cmd+=("$p")
 done
 
-target=${TMUX_PANE:-}
-if [ -n "$target" ]; then
-  tmux split-window -h -t "$target" "${cmd[@]}"
-else
-  tmux split-window -h "${cmd[@]}"
-fi
+tmux split-window -h -t "$target" "${cmd[@]}"
