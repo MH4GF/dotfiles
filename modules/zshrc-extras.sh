@@ -63,11 +63,7 @@ zinit light-mode for \
 
 zinit load azu/ni.zsh
 
-# mise (replaced by programs.mise in Phase 8)
-eval "$(mise activate zsh)"
-
-# direnv (replaced by programs.direnv in Phase 8)
-eval "$(direnv hook zsh)"
+# mise / direnv shell integration is injected by programs.{mise,direnv}.
 
 # Draft PRを作成してCIが通ったら自動でreadyにする
 pr_auto_ready() {
