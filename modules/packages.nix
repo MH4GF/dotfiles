@@ -5,6 +5,26 @@
 
 {
   home.packages = with pkgs; [
-    # Populated by later phases. Empty bootstrap for now.
+    # Search & format
+    ripgrep
+    fd
+    tree
+    jq
+    ghq
+    peco
+
+    # Development helpers
+    gitleaks
+    actionlint
+    duckdb
+    flock
+    uv
+
+    # Media
+    ffmpeg
+    imagemagick
+
+    # AWS
+    awscli2
   ];
 }
