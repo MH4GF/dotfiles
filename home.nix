@@ -12,5 +12,6 @@
     ./modules/dev.nix
     ./modules/darwin.nix
     ./modules/secrets.nix
+    ./modules/agent-skills.nix
   ];
 }

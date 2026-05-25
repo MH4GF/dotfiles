@@ -1,50 +1,70 @@
 # dotfiles
 
-My personal dotfiles and macOS setup scripts.
+Personal macOS setup managed by Nix Flakes + Home Manager (standalone).
 
-## 🚀 Quick Start
+## Quick Start
 
-### Full macOS Setup (New Machine)
+### Full setup on a new Mac
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/MH4GF/dotfiles/master/setup_macos.sh)"
 ```
 
-This will:
-- Install Xcode Command Line Tools
-- Install Homebrew
-- Install all packages from Brewfile
-- Setup dotfiles symlinks
-- Configure macOS system preferences
-- Install development tools via mise
+This script installs Xcode CLT, Homebrew, the Brewfile (mainly GUI casks and
+gh/gpg/pinentry-mac), clones the dotfiles via ghq, then runs `setup-nix.sh`
+to install Nix and apply the Home Manager configuration.
 
-### Dotfiles Only Setup
-
-If you just want to setup the dotfiles without installing packages:
+### Existing machine — apply Home Manager only
 
 ```bash
-./setup.sh
+./setup-nix.sh                                  # first time (installs Nix + applies HM)
+home-manager switch --flake .#mh4gf-mac         # ongoing
 ```
 
-## 📁 Structure
+## Layout
 
-- `Brewfile` - Homebrew packages and applications
-- `setup_macos.sh` - Complete macOS setup script
-- `setup.sh` - Dotfiles symlink setup only
-- `.config/` - Application configurations
-- `.zshrc` - Zsh configuration
-- `.gitconfig` - Git configuration
-- `mise.toml` - mise tool management
+| Path | Purpose |
+| --- | --- |
+| `flake.nix`, `flake.lock` | Flake entrypoint + pinned inputs (`nixpkgs` nixos-unstable, `home-manager` master) |
+| `home.nix` | Shared Home Manager base; imports every `modules/*.nix` |
+| `hosts/mh4gf-mac.nix` | Per-host entry (username, $HOME, dotfiles path, stateVersion) |
+| `modules/packages.nix` | CLI tools installed via `home.packages` |
+| `modules/shell.nix` | `programs.zsh` + `programs.starship` + history / aliases / env / PATH |
+| `modules/zshrc-extras.sh` | Long zsh snippets inlined into `programs.zsh.initContent` |
+| `modules/git.nix` | `programs.git` + `programs.gh` + `programs.tig`, githooks placement |
+| `modules/tmux.nix` | Inline `.tmux.conf` content |
+| `modules/neovim.nix` | `programs.neovim` + `init.lua` symlink + `.vimrc` / `.ideavimrc` |
+| `modules/dev.nix` | `programs.mise`, `programs.direnv`, mise config symlink |
+| `modules/darwin.nix` | macOS-only (karabiner, iterm2, ssh config, mas, terminal-notifier) |
+| `modules/secrets.nix` | `~/.gitconfig.local` / `~/.zsh_secrets` → `~/.config/secrets/` |
+| `modules/agent-skills.nix` | `bin/cc-human-review` + `.config/tq/prompts` symlinks |
+| `Brewfile` | GUI casks + brew-pinned CLI (`git`, `gh`, `gpg`, `pinentry-mac`) |
+| `setup_macos.sh` | Bootstrap: Xcode CLT, Homebrew, brew bundle, `defaults write`, `pmset` |
+| `setup-nix.sh` | Bootstrap: Determinate Nix installer + first `home-manager switch` + secret stubs |
 
-## 🔧 Manual Setup
+## Manual setup after the script
 
-After running the setup scripts, you'll need to:
+1. Sign in to 1Password (SSH keys are managed there)
+2. Populate `~/.config/secrets/`:
+   - `gitconfig.local` — `[user] signingkey = ...`
+   - `zsh_secrets` — `export OPENAI_API_KEY=...` etc.
+3. Generate / import GPG key and reference it in `~/.config/secrets/gitconfig.local`
+4. Configure iTerm2: Preferences → General → Preferences → load from `~/.config/iterm2`
+5. Restart the machine for all macOS preferences to take effect
 
-1. Sign in to 1Password
-2. Configure AWS credentials (if needed)
-3. Restart your computer for all macOS preferences to take effect
+## Customization
 
-## 📝 Customization
+- Add a new tool: append to `home.packages` in `modules/packages.nix`
+- Add a new zsh alias: extend `programs.zsh.shellAliases` in `modules/shell.nix`
+- Add a host (e.g., a Linux machine): copy `hosts/mh4gf-mac.nix` to
+  `hosts/<name>.nix`, adjust username / home / dotfilesPath, and register
+  the new `homeConfigurations.<name>` entry in `flake.nix`.
 
-- Copy `.gitconfig.local.sample` to `.gitconfig.local` for personal git settings
-- Copy `.zsh_secrets.example` to `.zsh_secrets` for private environment variables
+## Rollback
+
+Home Manager keeps every generation. To go back one step:
+
+```bash
+home-manager generations                       # list past generations
+home-manager switch --switch-generation <N>    # roll back
+```
