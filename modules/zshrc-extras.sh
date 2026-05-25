@@ -1,37 +1,10 @@
-#!/bin/sh
+# Inlined into programs.zsh.initContent via builtins.readFile.
+# Kept as a separate .sh file so the shell snippets get syntax highlighting
+# and avoid Nix indented-string escape headaches.
 
-## 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-## 補完候補を詰めて表示
-setopt list_packed
-## 補完候補一覧をカラー表示
-autoload colors
-zstyle ':completion:*' list-colors ''
-## コマンドのスペルを訂正
-setopt correct
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
-# ghq list
-alias ghql='cd $(ghq root)/$(ghq list | peco)'
-
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
-setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
-setopt hist_reduce_blanks    # 余分な空白は詰めて記録
-setopt hist_no_store         # historyコマンドは記録しない
-
-# git
-alias gp='git push -u origin $(git branch --show-current)'
-alias gpf='git push -u --force-with-lease origin $(git branch --show-current)'
+# Extra history options not covered by programs.zsh.history
+setopt hist_reduce_blanks
+setopt hist_no_store
 
 # Git commit lock wrapper (for multi-session safety)
 git() {
@@ -60,43 +33,12 @@ claude() {
     printf '\e[?2004l'
 }
 
-# docker
-alias dc='docker compose'
-
-# linux
-alias ll='ls -laG'
-
-export AWS_SDK_LOAD_CONFIG=1
-
-# GitHub
+# Runtime env vars (depend on shell-time commands)
 export GITHUB_TOKEN=$(gh auth token)
-
-# wakatime
-alias wakatime='docker run --rm -it mh4gf/wakatime-cli'
-
-# oh-my-zsh
-plugins=(wakatime)
-
-# textlint
-alias textlint='$HOME/.ghq/github.com/MH4GF/my-textlint/node_modules/.bin/textlint -c $HOME/.ghq/github.com/MH4GF/my-textlint/.textlintrc'
-
-# vscode
-alias devc='devcontainer open'
-
-# neovim + telescope
-alias nf="nvim +\"lua vim.defer_fn(function() require('telescope.builtin').find_files() end, 100)\""
-alias ng="nvim +\"lua vim.defer_fn(function() require('telescope.builtin').live_grep() end, 100)\""
-
-# cpp
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/cpp/include/
-
-# GPG key
 export GPG_TTY=$(tty)
 
-# Editor
-export EDITOR=nvim
-
-eval "$(direnv hook zsh)"
+# oh-my-zsh plugin list (vestigial: no framework loaded; preserved as-is)
+plugins=(wakatime)
 
 # Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -121,42 +63,11 @@ zinit light-mode for \
 
 zinit load azu/ni.zsh
 
-# mise
+# mise (replaced by programs.mise in Phase 8)
 eval "$(mise activate zsh)"
 
-# starship
-eval "$(starship init zsh)"
-
-# zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# deno
-export PATH="/Users/mh4gf/.deno/bin:$PATH"
-
-
-# bun completions
-[ -s "/Users/mh4gf/.bun/_bun" ] && source "/Users/mh4gf/.bun/_bun"
-export PATH="$HOME/.bun/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# # pnpm
-# export PNPM_HOME="/Users/mh4gf/Library/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# # pnpm end
-
-# # pnpm
-# export PNPM_HOME="/Users/mh4gf/Library/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# # pnpm end
+# direnv (replaced by programs.direnv in Phase 8)
+eval "$(direnv hook zsh)"
 
 # Draft PRを作成してCIが通ったら自動でreadyにする
 pr_auto_ready() {
@@ -164,32 +75,32 @@ pr_auto_ready() {
   local timeout=${1:-600}  # デフォルト10分
   local check_interval=10
   local elapsed=0
-  
+
   # PRがdraftかチェック
   local is_draft=$(gh pr view --json isDraft --jq '.isDraft' 2>/dev/null)
   if [ "$is_draft" != "true" ]; then
     echo "Current PR is not a draft"
     return 0
   fi
-  
+
   local pr_number=$(gh pr view --json number --jq '.number' 2>/dev/null)
   echo "Monitoring PR #$pr_number for check completion..."
-  
+
   while [ $elapsed -lt $timeout ]; do
     # チェック状況を取得（WIPを除外してカウント）
     total_checks=$(gh pr checks 2>/dev/null | grep -v "^$" | grep -v "^WIP" | wc -l | tr -d ' ')
     passed_checks=$(gh pr checks 2>/dev/null | grep -v "^WIP" | grep "pass" | wc -l | tr -d ' ')
-    
+
     if [ "$total_checks" -gt 0 ] && [ "$total_checks" -eq "$passed_checks" ]; then
       echo "All checks passed! Would convert PR to ready (dry-run mode)"
       echo "Command would run: gh pr ready"
       echo "PR #$pr_number would be ready for review"
       return 0
     fi
-    
+
     echo "Waiting for checks to complete... (${elapsed}s/${timeout}s)"
     echo "Status: $passed_checks/$total_checks checks passed"
-    
+
     # 失敗・待機中のチェックを表示（WIPを除外）
     gh pr checks 2>/dev/null | grep -v "pass" | grep -v "^WIP" | while read -r line; do
       if [ -n "$line" ]; then
@@ -199,17 +110,13 @@ pr_auto_ready() {
     sleep $check_interval
     elapsed=$((elapsed + check_interval))
   done
-  
+
   echo "Timeout reached. Some checks may still be running."
   return 1
 }
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 # Load secrets if exists
-[ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
-
-export PATH='/Users/mh4gf/.duckdb/cli/latest':$PATH
-
-export PATH="$HOME/.local/bin:$PATH"
-
-# wezterm
-export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+[ -f $HOME/.zsh_secrets ] && source $HOME/.zsh_secrets
