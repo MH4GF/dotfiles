@@ -4,7 +4,6 @@ brew 'gh'
 brew 'gpg'
 brew 'pinentry-mac'
 brew 'neovim'
-brew 'tig'
 brew 'mas'
 brew 'terminal-notifier'
 
