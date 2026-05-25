@@ -1,17 +1,7 @@
 #!/bin/sh
 
-mkdir -p ~/.config/karabiner/
 mkdir -p ~/.config/mise/
-
-ln -sf $(realpath $(dirname ${0}))/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
-
-mkdir -p ~/.ssh
-ln -sf $(realpath $(dirname ${0}))/.ssh/config ~/.ssh/config
-
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
-
-mkdir -p ~/.config/iterm2/
-ln -sf $(realpath $(dirname ${0}))/.config/iterm2/com.googlecode.iterm2.plist ~/.config/iterm2/com.googlecode.iterm2.plist
 
 # tq prompts
 mkdir -p ~/.config/tq
