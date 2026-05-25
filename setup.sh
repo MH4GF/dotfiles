@@ -4,7 +4,6 @@ mkdir -p ~/.config/karabiner/
 mkdir -p ~/.config/mise/
 
 ln -sf $(realpath $(dirname ${0}))/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
-ln -sf $(realpath $(dirname ${0}))/.config/gh/config.yml ~/.config/gh/config.yml
 
 mkdir -p ~/.ssh
 ln -sf $(realpath $(dirname ${0}))/.ssh/config ~/.ssh/config
@@ -16,7 +15,6 @@ mkdir -p ~/.config/nvim
 ln -sf $(realpath $(dirname ${0}))/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
 ln -sf $(realpath $(dirname ${0}))/.tmux.conf ~/.tmux.conf
-ln -sf $(realpath $(dirname ${0}))/.tigrc ~/.tigrc
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
 
 mkdir -p ~/.config/iterm2/

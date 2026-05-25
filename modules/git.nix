@@ -1,6 +1,5 @@
 # Git configuration: user identity, aliases, core options, credential helpers,
-# global ignore, and the hooks directory referenced by core.hooksPath.
-# gh / tig live here too; phase 6 adds programs.gh + programs.tig.
+# global ignore, hooks directory, plus gh and tig.
 { ... }:
 
 {
@@ -93,5 +92,32 @@
   home.file.".githooks/pre-commit" = {
     source = ../.githooks/pre-commit;
     executable = true;
+  };
+
+  programs.gh = {
+    enable = true;
+    # Credential helper is configured manually in programs.git.extraConfig
+    # so it points at the brew gh binary (matches the existing setup).
+    gitCredentialHelper.enable = false;
+    settings = {
+      git_protocol = "ssh";
+      editor = null;
+      prompt = "enabled";
+      version = "1";
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view --web";
+        b = "browse -c";
+        prv = "pr view --web";
+        prc = "pr create --fill --draft";
+      };
+    };
+  };
+
+  programs.tig = {
+    enable = true;
+    extraConfig = [
+      "set wrap-lines = yes"
+    ];
   };
 }
