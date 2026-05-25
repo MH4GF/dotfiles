@@ -5,7 +5,6 @@ mkdir -p ~/.config/git/
 mkdir -p ~/.config/mise/
 
 ln -sf $(realpath $(dirname ${0}))/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
-ln -sf $(realpath $(dirname ${0}))/.config/starship.toml ~/.config/starship.toml
 ln -sf $(realpath $(dirname ${0}))/.config/gh/config.yml ~/.config/gh/config.yml
 ln -sf $(realpath $(dirname ${0}))/.config/git/ignore ~/.config/git/ignore
 
@@ -17,7 +16,6 @@ ln -sf $(realpath $(dirname ${0}))/.vimrc ~/.vimrc
 # Neovim
 mkdir -p ~/.config/nvim
 ln -sf $(realpath $(dirname ${0}))/.config/nvim/init.lua ~/.config/nvim/init.lua
-ln -sf $(realpath $(dirname ${0}))/.zshrc ~/.zshrc
 ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
 ln -sf $(realpath $(dirname ${0}))/.gitconfig ~/.gitconfig
 ln -sf $(realpath $(dirname ${0}))/.tmux.conf ~/.tmux.conf
