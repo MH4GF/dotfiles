@@ -3,7 +3,6 @@ brew 'mise'
 brew 'gh'
 brew 'gpg'
 brew 'pinentry-mac'
-brew 'neovim'
 brew 'mas'
 brew 'terminal-notifier'
 

@@ -8,13 +8,6 @@ ln -sf $(realpath $(dirname ${0}))/.config/karabiner/karabiner.json ~/.config/ka
 mkdir -p ~/.ssh
 ln -sf $(realpath $(dirname ${0}))/.ssh/config ~/.ssh/config
 
-ln -sf $(realpath $(dirname ${0}))/.vimrc ~/.vimrc
-
-# Neovim
-mkdir -p ~/.config/nvim
-ln -sf $(realpath $(dirname ${0}))/.config/nvim/init.lua ~/.config/nvim/init.lua
-ln -sf $(realpath $(dirname ${0}))/.ideavimrc ~/.ideavimrc
-ln -sf $(realpath $(dirname ${0}))/.tmux.conf ~/.tmux.conf
 ln -sf $(realpath $(dirname ${0}))/.config/mise/config.toml ~/.config/mise/config.toml
 
 mkdir -p ~/.config/iterm2/
@@ -27,4 +20,3 @@ ln -sfn $(realpath $(dirname ${0}))/.config/tq/prompts ~/.config/tq/prompts
 # bin scripts
 mkdir -p ~/.local/bin
 ln -sf $(realpath $(dirname ${0}))/bin/cc-human-review ~/.local/bin/cc-human-review
-
