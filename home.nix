@@ -7,5 +7,7 @@
     ./modules/packages.nix
     ./modules/shell.nix
     ./modules/git.nix
+    ./modules/tmux.nix
+    ./modules/neovim.nix
   ];
 }
