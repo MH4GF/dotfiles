@@ -11,5 +11,6 @@
     ./modules/neovim.nix
     ./modules/dev.nix
     ./modules/darwin.nix
+    ./modules/secrets.nix
   ];
 }

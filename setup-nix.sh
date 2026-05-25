@@ -17,6 +17,19 @@ if ! command -v nix &>/dev/null; then
   fi
 fi
 
+# Create empty stubs for secret files so the mkOutOfStoreSymlink links from
+# modules/secrets.nix point at real (if empty) files. Populate these later
+# with your real signingkey / API tokens.
+SECRETS_DIR="$HOME/.config/secrets"
+mkdir -p "$SECRETS_DIR"
+chmod 700 "$SECRETS_DIR"
+for f in gitconfig.local zsh_secrets; do
+  if [[ ! -e "$SECRETS_DIR/$f" ]]; then
+    touch "$SECRETS_DIR/$f"
+    chmod 600 "$SECRETS_DIR/$f"
+  fi
+done
+
 echo "==> Applying Home Manager configuration (host: ${HOST})..."
 # Use the home-manager pinned by this flake (no global install required).
 # -b backup preserves any pre-existing dotfiles as <name>.backup.
