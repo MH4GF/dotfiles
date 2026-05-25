@@ -5,5 +5,6 @@
 {
   imports = [
     ./modules/packages.nix
+    ./modules/shell.nix
   ];
 }
