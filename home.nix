@@ -10,5 +10,6 @@
     ./modules/tmux.nix
     ./modules/neovim.nix
     ./modules/dev.nix
+    ./modules/darwin.nix
   ];
 }

@@ -2,8 +2,6 @@ brew 'git'
 brew 'gh'
 brew 'gpg'
 brew 'pinentry-mac'
-brew 'mas'
-brew 'terminal-notifier'
 
 cask 'slack'
 cask 'karabiner-elements'
