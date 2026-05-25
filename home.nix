@@ -6,5 +6,6 @@
   imports = [
     ./modules/packages.nix
     ./modules/shell.nix
+    ./modules/git.nix
   ];
 }
