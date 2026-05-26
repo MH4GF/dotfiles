@@ -1,8 +1,3 @@
-# Inlined into programs.zsh.initContent via builtins.readFile.
-# Kept as a separate .sh file so the shell snippets get syntax highlighting
-# and avoid Nix indented-string escape headaches.
-
-# Extra history options not covered by programs.zsh.history
 setopt hist_reduce_blanks
 setopt hist_no_store
 
@@ -33,11 +28,13 @@ claude() {
     printf '\e[?2004l'
 }
 
-# Runtime env vars (depend on shell-time commands)
+# GitHub
 export GITHUB_TOKEN=$(gh auth token)
+
+# GPG key
 export GPG_TTY=$(tty)
 
-# oh-my-zsh plugin list (vestigial: no framework loaded; preserved as-is)
+# oh-my-zsh
 plugins=(wakatime)
 
 # Added by Zinit's installer
@@ -62,8 +59,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit load azu/ni.zsh
-
-# mise / direnv shell integration is injected by programs.{mise,direnv}.
 
 # Draft PRを作成してCIが通ったら自動でreadyにする
 pr_auto_ready() {

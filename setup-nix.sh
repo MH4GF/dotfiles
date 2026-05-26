@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Bootstrap script: install Nix (Determinate Systems installer) and apply
-# Home Manager configuration from this flake. Safe to re-run (idempotent).
 
 set -euo pipefail
 
@@ -10,16 +8,12 @@ if ! command -v nix &>/dev/null; then
   echo "==> Installing Nix via Determinate Systems installer..."
   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-  # Pick up freshly installed Nix in the current shell.
   if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
     # shellcheck disable=SC1091
     source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
   fi
 fi
 
-# Create empty stubs for secret files so the mkOutOfStoreSymlink links from
-# modules/secrets.nix point at real (if empty) files. Populate these later
-# with your real signingkey / API tokens.
 SECRETS_DIR="$HOME/.config/secrets"
 mkdir -p "$SECRETS_DIR"
 chmod 700 "$SECRETS_DIR"
@@ -31,8 +25,6 @@ for f in gitconfig.local zsh_secrets; do
 done
 
 echo "==> Applying Home Manager configuration (host: ${HOST})..."
-# Use the home-manager pinned by this flake (no global install required).
-# -b backup preserves any pre-existing dotfiles as <name>.backup.
 nix run home-manager/master -- switch --flake ".#${HOST}" -b backup
 
 if ! command -v home-manager &>/dev/null; then
@@ -40,8 +32,6 @@ if ! command -v home-manager &>/dev/null; then
   nix profile install nixpkgs#home-manager
 fi
 
-# gpg-agent caches the pinentry path; force a reload so the next signing
-# operation picks up the Nix pinentry-mac configured in modules/darwin.nix.
 if command -v gpgconf &>/dev/null; then
   echo "==> Restarting gpg-agent to pick up new pinentry path..."
   gpgconf --kill gpg-agent || true

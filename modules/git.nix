@@ -1,5 +1,3 @@
-# Git configuration: user identity, aliases, core options, credential helpers,
-# global ignore, hooks directory, plus gh and tig.
 { ... }:
 
 {
@@ -65,7 +63,6 @@
       { path = "~/.gitconfig.local"; }
     ];
 
-    # Global gitignore (~/.config/git/ignore)
     ignores = [
       ".idea/"
       ".DS_Store"
@@ -87,8 +84,6 @@
     ];
   };
 
-  # Hook scripts referenced by core.hooksPath. Only the tracked pre-commit
-  # script is managed here; add new hooks alongside as they get committed.
   home.file.".githooks/pre-commit" = {
     source = ../.githooks/pre-commit;
     executable = true;
@@ -96,13 +91,9 @@
 
   programs.gh = {
     enable = true;
-    # Credential helper is configured manually in programs.git.extraConfig
-    # so it points at the brew gh binary (matches the existing setup).
     gitCredentialHelper.enable = false;
     settings = {
       git_protocol = "ssh";
-      # Empty string = use $EDITOR (matches the original `editor: !!null` in
-      # the upstream config.yml). HM rejects null here.
       editor = "";
       prompt = "enabled";
       version = "1";
@@ -116,8 +107,6 @@
     };
   };
 
-  # tig has no HM module; install the binary in packages.nix and place
-  # .tigrc manually here.
   home.file.".tigrc".text = ''
     set wrap-lines = yes
   '';
