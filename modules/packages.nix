@@ -5,8 +5,9 @@
 
 {
   home.packages = with pkgs; [
-    # Version control
+    # Version control & signing
     git
+    gnupg
 
     # Search & format
     ripgrep

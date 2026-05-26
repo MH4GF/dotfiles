@@ -20,11 +20,20 @@
       # SSH config points at the 1Password agent socket under Group Containers,
       # which only exists on macOS. Safe to plain-source: rarely edited.
       ".ssh/config".source = ../.ssh/config;
+
+      # gpg-agent needs an explicit absolute path for pinentry on macOS.
+      # If you have other gpg-agent customizations (default-cache-ttl etc.)
+      # add them to this text block. After switching, run
+      # `gpgconf --kill gpg-agent` once so the new path is picked up.
+      ".gnupg/gpg-agent.conf".text = ''
+        pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
+      '';
     };
 
     home.packages = with pkgs; [
       mas
       terminal-notifier
+      pinentry_mac
     ];
   };
 }

@@ -1,6 +1,3 @@
-brew 'gpg'
-brew 'pinentry-mac'
-
 cask 'slack'
 cask 'karabiner-elements'
 cask 'google-chrome'

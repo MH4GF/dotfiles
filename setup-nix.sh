@@ -40,6 +40,13 @@ if ! command -v home-manager &>/dev/null; then
   nix profile install nixpkgs#home-manager
 fi
 
+# gpg-agent caches the pinentry path; force a reload so the next signing
+# operation picks up the Nix pinentry-mac configured in modules/darwin.nix.
+if command -v gpgconf &>/dev/null; then
+  echo "==> Restarting gpg-agent to pick up new pinentry path..."
+  gpgconf --kill gpg-agent || true
+fi
+
 echo
 echo "Done. From now on, apply changes with:"
 echo "  home-manager switch --flake .#${HOST}"
