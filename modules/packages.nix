@@ -5,6 +5,9 @@
 
 {
   home.packages = with pkgs; [
+    # Version control
+    git
+
     # Search & format
     ripgrep
     fd
