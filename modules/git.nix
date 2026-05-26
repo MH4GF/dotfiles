@@ -101,7 +101,9 @@
     gitCredentialHelper.enable = false;
     settings = {
       git_protocol = "ssh";
-      editor = null;
+      # Empty string = use $EDITOR (matches the original `editor: !!null` in
+      # the upstream config.yml). HM rejects null here.
+      editor = "";
       prompt = "enabled";
       version = "1";
       aliases = {
