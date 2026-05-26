@@ -1,12 +1,10 @@
-# Editors: Neovim (Nix-installed) plus vim and IdeaVim configs.
-# init.lua is symlinked back into the dotfiles checkout via mkOutOfStoreSymlink
-# so edits to the file in this repo take effect without re-running
-# `home-manager switch`. lazy.nvim continues to manage plugins at runtime.
+# Editors: Neovim configs plus vim and IdeaVim. Neovim binary itself is
+# installed via packages.nix; programs.neovim would otherwise create its own
+# managed ~/.config/nvim/init.lua and conflict with the mkOutOfStoreSymlink
+# below that points back into the dotfiles checkout.
 { config, dotfilesPath, ... }:
 
 {
-  programs.neovim.enable = true;
-
   home.file = {
     ".config/nvim/init.lua".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/.config/nvim/init.lua";
