@@ -8,6 +8,7 @@
     # Version control & signing
     git
     gnupg
+    tig
 
     # Search & format
     ripgrep
