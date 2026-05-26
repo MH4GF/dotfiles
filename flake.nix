@@ -1,5 +1,3 @@
-# Flake entrypoint: declares inputs (nixpkgs unstable, home-manager master)
-# and exposes one Home Manager configuration per host under homeConfigurations.
 {
   description = "MH4GF dotfiles managed by Home Manager (standalone)";
 

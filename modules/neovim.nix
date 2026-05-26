@@ -1,7 +1,3 @@
-# Editors: Neovim configs plus vim and IdeaVim. Neovim binary itself is
-# installed via packages.nix; programs.neovim would otherwise create its own
-# managed ~/.config/nvim/init.lua and conflict with the mkOutOfStoreSymlink
-# below that points back into the dotfiles checkout.
 { config, dotfilesPath, ... }:
 
 {

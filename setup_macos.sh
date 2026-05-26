@@ -60,7 +60,7 @@ if command -v op &> /dev/null; then
     op signin
 fi
 
-# dotfilesのクローンとNix / Home Managerのセットアップ
+# dotfilesのクローンとセットアップ
 # 注: SSH鍵は1Passwordで管理。上記でサインイン後、SSH Agentが利用可能
 echo "📥 Setting up dotfiles..."
 ghq get --update git@github.com:MH4GF/dotfiles.git
@@ -68,7 +68,7 @@ ghq get --update git@github.com:MH4GF/dotfiles.git
     cd ~/ghq/github.com/MH4GF/dotfiles && ./setup-nix.sh
 )
 
-# mise開発ツールのセットアップ (Nix で入った mise が ~/.config/mise/config.toml を読む)
+# mise開発ツールのセットアップ
 echo "🛠 Installing development tools with mise..."
 if [[ -f ~/.config/mise/config.toml ]]; then
     mise trust ~/.config/mise/config.toml

@@ -1,5 +1,3 @@
-# Shell-level configuration: prompt, zsh, completions, history, env vars, PATH.
-# Long shell snippets live in ./zshrc-extras.sh and are inlined via readFile.
 { lib, pkgs, ... }:
 
 {
@@ -73,7 +71,6 @@
   ];
 
   home.packages = with pkgs; [
-    # Generic completions for tools that don't ship their own.
     zsh-completions
   ];
 }
