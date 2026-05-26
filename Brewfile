@@ -1,4 +1,3 @@
-brew 'gh'
 brew 'gpg'
 brew 'pinentry-mac'
 
