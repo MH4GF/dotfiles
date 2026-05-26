@@ -48,7 +48,7 @@
       commit.gpgsign = true;
       "github-nippou".user = "MH4GF";
       rerere.enabled = true;
-      gpg.program = "/opt/homebrew/bin/gpg";
+      gpg.program = "gpg";
       credential = {
         "https://github.com".helper = [
           ""
