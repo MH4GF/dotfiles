@@ -10,6 +10,9 @@
     gnupg
     tig
 
+    # Editor (config managed by modules/neovim.nix)
+    neovim
+
     # Search & format
     ripgrep
     fd
