@@ -114,10 +114,9 @@
     };
   };
 
-  programs.tig = {
-    enable = true;
-    extraConfig = [
-      "set wrap-lines = yes"
-    ];
-  };
+  # tig has no HM module; install the binary in packages.nix and place
+  # .tigrc manually here.
+  home.file.".tigrc".text = ''
+    set wrap-lines = yes
+  '';
 }
