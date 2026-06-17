@@ -68,6 +68,7 @@
     "$HOME/.duckdb/cli/latest"
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
     "/Applications/WezTerm.app/Contents/MacOS"
+    "/opt/homebrew/opt/libpq/bin"
   ];
 
   home.packages = with pkgs; [
