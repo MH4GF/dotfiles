@@ -57,7 +57,7 @@ brew bundle --global
 echo "🔐 Setting up 1Password CLI..."
 if command -v op &> /dev/null; then
     echo "Please sign in to 1Password CLI:"
-    op signin
+    eval $(op signin)
 fi
 
 # dotfilesのクローンとセットアップ
