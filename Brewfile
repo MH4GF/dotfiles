@@ -1,4 +1,5 @@
 cask 'karabiner-elements'
+cask 'homerow'
 cask 'google-chrome'
 cask 'docker-desktop'
 cask '1password'
