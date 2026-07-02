@@ -50,8 +50,9 @@ echo "📥 Fetching Brewfile..."
 curl -fsSL https://raw.githubusercontent.com/MH4GF/dotfiles/master/Brewfile > ~/.Brewfile
 
 # Brewfileからパッケージをインストール
+# 個別のcask/formula失敗でスクリプト全体が止まらないようにする（set -e対策）
 echo "📦 Installing packages from Brewfile..."
-brew bundle --global
+brew bundle --global || echo "⚠️  一部のBrewfile依存のインストールに失敗しましたが、続行します。"
 
 # 1Password CLIのセットアップ
 echo "🔐 Setting up 1Password CLI..."
@@ -63,10 +64,18 @@ fi
 # dotfilesのクローンとセットアップ
 # 注: SSH鍵は1Passwordで管理。上記でサインイン後、SSH Agentが利用可能
 echo "📥 Setting up dotfiles..."
-ghq get --update git@github.com:MH4GF/dotfiles.git
+# ghqはこの後のHome Managerで導入されるため、ここではまだ無い。素のgitでクローンする
+DOTFILES_DIR="$HOME/ghq/github.com/MH4GF/dotfiles"
+if [[ ! -d "$DOTFILES_DIR" ]]; then
+    mkdir -p "$(dirname "$DOTFILES_DIR")"
+    git clone git@github.com:MH4GF/dotfiles.git "$DOTFILES_DIR"
+fi
 (
-    cd ~/ghq/github.com/MH4GF/dotfiles && ./setup-nix.sh
+    cd "$DOTFILES_DIR" && ./setup-nix.sh
 )
+
+# Home Managerで導入したツール（mise等）を現在のシェルのPATHに載せる
+export PATH="$HOME/.nix-profile/bin:$PATH"
 
 # mise開発ツールのセットアップ
 echo "🛠 Installing development tools with mise..."
