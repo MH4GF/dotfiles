@@ -5,6 +5,7 @@
     git
     gnupg
     tig
+    tmux
     neovim
     ripgrep
     fd

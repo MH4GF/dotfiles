@@ -14,5 +14,10 @@
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [ ./hosts/mh4gf-mac.nix ];
     };
+
+    homeConfigurations.hirotaka-miyagi-001-mac = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      modules = [ ./hosts/hirotaka-miyagi-001-mac.nix ];
+    };
   };
 }
