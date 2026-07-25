@@ -59,6 +59,8 @@
     AWS_SDK_LOAD_CONFIG = "1";
     CPLUS_INCLUDE_PATH = "$CPLUS_INCLUDE_PATH:$HOME/cpp/include/";
     BUN_INSTALL = "$HOME/.bun";
+    # works vault (Obsidian) の絶対 root。cwd 非依存で project skill が vault を解決する。
+    WORKS_ROOT = "$HOME/ghq/github.com/MH4GF/works";
   };
 
   home.sessionPath = [
