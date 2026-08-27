@@ -5,7 +5,10 @@ GOBIN = "{{env.HOME}}/.local/bin"
 node = "22.14.0"
 go = "1.26.1"
 ruby = "4.0.5"
+claude-code = "latest"
+python = "3.12"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
 ruby.compile = false
+go_set_goroot = false
