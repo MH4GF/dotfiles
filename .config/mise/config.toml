@@ -6,6 +6,7 @@ node = "22.14.0"
 go = "1.26.1"
 ruby = "4.0.5"
 claude-code = "latest"
+opencode = "latest"
 python = "3.12"
 
 [settings]
