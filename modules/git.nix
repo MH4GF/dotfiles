@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.git = {
@@ -49,7 +49,7 @@
       commit.gpgsign = true;
       "github-nippou".user = "MH4GF";
       rerere.enabled = true;
-      gpg.program = "gpg";
+      gpg.program = "${pkgs.gnupg}/bin/gpg";
       credential = {
         "https://github.com".helper = [
           ""
