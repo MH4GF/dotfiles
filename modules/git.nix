@@ -80,10 +80,10 @@
       "lefthook-local.yml"
       "compose.override.yml"
       "compose.override.yaml"
-      ".claude/plans/"
-      ".claude/qa/"
-      ".claude/tmp/"
-      ".claude/worktrees/"
+      "**/.claude/plans/"
+      "**/.claude/qa/"
+      "**/.claude/tmp/"
+      "**/.claude/worktrees/"
     ];
   };
 
