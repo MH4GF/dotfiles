@@ -92,6 +92,10 @@
     executable = true;
   };
 
+  # pre-commit の gitleaks が --config で参照する。配布しないと
+  # "unable to load gitleaks config" で全リポジトリの commit が止まる。
+  home.file.".config/gitleaks/config.toml".source = ../.config/gitleaks/config.toml;
+
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = false;
