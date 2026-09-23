@@ -52,6 +52,10 @@
     '';
 
     initContent = builtins.readFile ./zshrc-extras.sh;
+
+    profileExtra = lib.optionalString pkgs.stdenv.hostPlatform.isDarwin ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
   };
 
   home.sessionVariables = {
@@ -68,9 +72,10 @@
     "$HOME/.bun/bin"
     "$HOME/.deno/bin"
     "$HOME/.duckdb/cli/latest"
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
     "/Applications/WezTerm.app/Contents/MacOS"
     "/opt/homebrew/opt/libpq/bin"
+    "/Applications/Obsidian.app/Contents/MacOS"
   ];
 
   home.packages = with pkgs; [

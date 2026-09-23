@@ -1,7 +1,7 @@
 { config, lib, pkgs, dotfilesPath, ... }:
 
 {
-  config = lib.mkIf pkgs.stdenv.isDarwin {
+  config = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     home.file = {
       ".config/karabiner/karabiner.json".source =
         config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/.config/karabiner/karabiner.json";
