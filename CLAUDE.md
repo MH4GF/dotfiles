@@ -39,7 +39,7 @@ Key files and directories:
 
 ### Tool Version Management (mise)
 This repository uses mise for managing development tool versions:
-- Node.js: 22.14.0
+- Node.js: 24.20.0
 - Go: 1.21.2
 - Ruby: 3.2.2
 

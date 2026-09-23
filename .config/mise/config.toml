@@ -2,7 +2,7 @@
 GOBIN = "{{env.HOME}}/.local/bin"
 
 [tools]
-node = "22.14.0"
+node = "24.20.0"
 go = "1.26.1"
 ruby = "4.0.5"
 claude-code = "latest"
