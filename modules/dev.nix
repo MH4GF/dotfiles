@@ -1,9 +1,13 @@
-{ config, dotfilesPath, ... }:
+{ config, pkgs, dotfilesPath, ... }:
 
 {
   programs.mise = {
     enable = true;
   };
+
+  # mise の shim が効かない cron と `#!/usr/bin/env node` の npm CLI (works の npm-globals) 向けに、
+  # 固定パス (~/.nix-profile/bin) の node を置く。対話シェルでは mise の node が優先される。
+  home.packages = [ pkgs.nodejs_22 ];
 
   programs.direnv = {
     enable = true;
