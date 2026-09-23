@@ -21,5 +21,6 @@
     ffmpeg
     imagemagick
     awscli2
+    opencode
   ];
 }
